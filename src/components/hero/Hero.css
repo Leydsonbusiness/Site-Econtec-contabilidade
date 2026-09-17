@@ -1,0 +1,247 @@
+.hero {
+  width: 100%;
+  padding: 3rem 1.5rem 0 1.5rem;
+  background-color: var(--bg-light);
+}
+
+.hero_container {
+  width: 100%;
+  max-width: 1270px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero_titulo {
+  font-size: 2.7rem;
+  line-height: 1.2;
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+}
+
+.destacar {
+  font-size: 2.7rem;
+  position: relative;
+  display: inline-block;
+  border-bottom: 4px solid var(--accent-hover); 
+  border-radius: 2px;
+  padding-bottom: 1px;
+  color: rgba(27, 87, 179, 0.85);
+}
+
+.hero_subtitulo {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.7rem;
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.hero_bt {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn_whatsapp {
+  background-color: var(--accent);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(1, 124, 79, 0.3);
+  transition: all 0.5s ease;
+}
+
+.btn_whatsapp:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn_servicos {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.8rem 1.7rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn_servicos:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* carrossel */
+.hero_container_carrossel {
+  width: 100%;
+  max-width: 650px;
+  justify-self: center;
+}
+
+.card_carrossel {
+  position: relative;
+  width: 570px;
+  height: 380px;
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 44, 89, 0.15);
+  background-color: #111827;
+}
+
+/* hover botes carrossel */
+.card_carrossel:hover .carrossel-btn {
+  opacity: 1;
+}
+
+.carrossel_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: all 1s ease-in-out;
+}
+
+/* Botões */
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: var(--white);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  z-index: 10;
+}
+
+.carrossel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.btn-prev {
+  left: 1rem;
+}
+
+.btn-next {
+  right: 1rem;
+}
+
+/* bolinhas no carrossel */
+.carrossel-indicadores {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.25rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.indicador-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 9999px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicador-dot:hover {
+  background-color: var(--white);
+}
+
+.indicador-dot.ativo {
+  width: 28px;
+  background-color: var(--accent);
+}
+
+/* MÉTRICAS */
+.container_metricas {
+  max-width: 1200px;
+  margin: 4rem auto 0 auto;
+  border-top: 1px solid #d9dde4;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.metricas_hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.metrica_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.metrica_numeros {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  transition: 0.4s ease-in;
+}
+
+.metrica_numeros:hover{
+  font-size: 2.5rem;
+}
+
+.metrica-frase {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+
+/*Responsividade monitores maiores*/
+@media (min-width: 1600px) {
+  .hero_container,
+  .metricas_hero {
+    max-width: 1360px;
+  }}
+
+/* responsividade celular */
+@media (max-width: 768px) {
+  .hero_container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero_titulo,
+  .destacar {
+    font-size: 2rem;
+  }
+
+  .hero_container_carrossel {
+    max-width: 100%;
+  }
+
+  .card_carrossel {
+    height: 280px;
+  }
+
+  .metricas_hero {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
