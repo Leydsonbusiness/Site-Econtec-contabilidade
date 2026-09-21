@@ -4,21 +4,23 @@ import './Hero.css';
 const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
 
 // Fotos carrossel 
-import FOTO_ECONTEC1 from "../../assets/Logo_econtec.png"
-import FOTO_ECONTEC2 from "../../assets/Logo_econtec_3D.jpg"
+// import FOTO_ECONTEC1 from "../../assets/Logo_econtec.png"
+// import FOTO_ECONTEC2 from "../../assets/Logo_econtec_3D.jpg"
+import img_teste from "../../assets/img_teste.png"
+
 
 const FOTOS_ECONTEC = [
   {
     id: 1,
-    url: FOTO_ECONTEC1,
+    url: img_teste,
   },
   {
     id: 2,
-    url: FOTO_ECONTEC2,
+    url: img_teste,
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80",
+    url: img_teste,
   }
 ];
 
@@ -42,7 +44,7 @@ export function Hero() {
     setIndiceAtual((prev) => (prev === FOTOS_ECONTEC.length - 1 ? 0 : prev + 1));
   };
 
-  const handleWhatsappClick = (e) => {
+  const mensagem_wpp = (e) => {
     e.preventDefault();
     if (WHATSAPP_ECONTEC) {
       window.open(
@@ -54,7 +56,7 @@ export function Hero() {
 
   const metricas = [
     { number: '28 anos', label: 'de tradição e mercado' },
-    { number: '+50', label: 'clientes atendidos' },
+    { number: '+150', label: 'clientes atendidos' },
     { number: '100%', label: 'atendimento digital e presencial' }
   ];
 
@@ -62,40 +64,40 @@ export function Hero() {
     <section className="hero" id="inicio">
       <div className="hero_container">
         
-        {/* lado esquerdo do hero */}
+        {/* ======= lado esquerdo do hero ======= */}
         <div className="hero-content">
           <h1 className="hero_titulo">
-            Contabilidade que transforma números em <span className="destacar">decisões</span> para o seu negócio.
+            Contabilidade que transforma números em <span className="destacar_titulo">decisões</span> para o seu negócio.
           </h1>
           
           <p className="hero_subtitulo">
-            Há 28 anos ajudando empresas a crescerem com segurança fiscal, organização financeira e atendimento próximo.
+            Há <span className='destacar_subtitulo'>28 anos</span> ajudando empresas a crescerem com segurança fiscal, organização financeira e atendimento próximo.
           </p>
           
           <div className="hero_bt">
             <a 
               href="#whatsapp" 
-              onClick={handleWhatsappClick}
+              onClick={mensagem_wpp}
               className="btn_whatsapp"
             >
-              Fale com a Econtec
+              Fale conosco
             </a>
             <a href="#servicos" className="btn_servicos">
-              Serviços
+              Nossos serviços <span className='seta_btn_servicos'>🠗</span>
             </a>
           </div>
         </div>
 
-        {/* LADO DIREITO: CARROSSEL CUSTOMIZADO */}
+        {/* ======= lado direito ======= */}
         <div className="hero_container_carrossel">
           <div className="card_carrossel">
             <img 
               src={FOTOS_ECONTEC[indiceAtual].url} 
-              alt={FOTOS_ECONTEC[indiceAtual].titulo} 
+              alt={"Fotos_Econtec"} 
               className="carrossel_img"
             />
 
-            {/* Botões de Avançar e Voltar */}
+            {/* ======= botoes carrossel ======= */}
             <button 
               onClick={fotoAnterior}
               className="carrossel-btn btn-prev"
@@ -115,7 +117,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* MÉTRICAS */}
+      {/* ======= metricas ======= */}
       <div className="container_metricas">
         <div className="metricas_hero">
           {metricas.map((metric, index) => (
