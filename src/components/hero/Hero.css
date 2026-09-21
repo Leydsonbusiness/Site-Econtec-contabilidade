@@ -63,7 +63,7 @@
 
 .btn_whatsapp:hover {
   background-color: var(--accent-hover);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 .btn_servicos {
@@ -90,13 +90,14 @@
 .seta_btn_servicos{
   font-size: 1.3rem;
   line-height: 1;
+  margin-top: 3px;
   margin-left: 5px;
   display: inline-block;
   transition: all 0.4s ease;
 } 
 
 .btn_servicos:hover .seta_btn_servicos{
-  transform: translateY(6px);
+  transform: translateY(3px);
 }
 
 /* carrossel */
@@ -108,8 +109,8 @@
 
 .card_carrossel {
   position: relative;
-  width: 570px;
-  height: 380px;
+  width: 490px;
+  height: 280px;
   border-radius: 9px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(15, 44, 89, 0.15);
@@ -226,7 +227,7 @@
   font-size: 2.5rem;
 }
 
-.metrica-frase {
+.metrica_frase {
   font-size: 1rem;
   color: var(--text-muted);
   margin-top: 0.3rem;

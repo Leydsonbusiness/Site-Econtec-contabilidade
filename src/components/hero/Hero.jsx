@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 import './Hero.css';
 
 const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
@@ -8,7 +10,7 @@ const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
 // import FOTO_ECONTEC2 from "../../assets/Logo_econtec_3D.jpg"
 import img_teste from "../../assets/img_teste.png"
 
-
+// Carrossel
 const FOTOS_ECONTEC = [
   {
     id: 1,
@@ -23,6 +25,41 @@ const FOTOS_ECONTEC = [
     url: img_teste,
   }
 ];
+
+function MetricCounter({ end = 0, duration = 1420, prefix = '', suffix = '', inView }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+
+    let start = 0;
+    const target = Number(end) || 0;
+    const steps = 60;
+    const increment = target / steps;
+    const stepTime = duration / steps;
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, stepTime);
+
+    return () => clearInterval(timer);
+  }, [inView, end, duration]);
+
+  const seguroPrefix = prefix || '';
+  const seguroSuffix = suffix || '';
+
+  return (
+    <span>
+      {seguroPrefix}{count}{seguroSuffix}
+    </span>
+  );
+}
 
 export function Hero() {
   const [indiceAtual, setIndiceAtual] = useState(0);
@@ -54,12 +91,18 @@ export function Hero() {
     }
   };
 
-  const metricas = [
-    { number: '28 anos', label: 'de tradição e mercado' },
-    { number: '+150', label: 'clientes atendidos' },
-    { number: '100%', label: 'atendimento digital e presencial' }
-  ];
+// metricas
+const { ref: refMetrics, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2
+  });
 
+  const metrics = [
+    { end: 28, suffix: ' anos', label: 'de tradição e mercado' },
+    { end: 150, prefix: '+', label: 'clientes atendidos' },
+    { end: 100, suffix: '%', label: 'atendimento digital e presencial' }
+  ];
+  
   return (
     <section className="hero" id="inicio">
       <div className="hero_container">
@@ -117,13 +160,20 @@ export function Hero() {
         </div>
       </div>
 
-      {/* ======= metricas ======= */}
-      <div className="container_metricas">
+{/* BARRA DE MÉTRICAS */}
+      <div className="container_metricas" ref={refMetrics}>
         <div className="metricas_hero">
-          {metricas.map((metric, index) => (
+          {metrics.map((metric, index) => (
             <div key={index} className="metrica_item">
-              <strong className="metrica_numeros">{metric.number}</strong>
-              <span className="metrica-frase">{metric.label}</span>
+              <strong className="metrica_numeros">
+                <MetricCounter 
+                  end={metric.end} 
+                  prefix={metric.prefix || ''} 
+                  suffix={metric.suffix || ''} 
+                  inView={inView}  
+                />
+              </strong>
+              <span className="metrica_frase">{metric.label}</span>
             </div>
           ))}
         </div>

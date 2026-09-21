@@ -1,21 +1,26 @@
-import React from 'react';
-import './About.css'
-import img_teste from "../../assets/img_teste.png"
+import React, { useState, useEffect } from 'react';
+import './About.css';
+import img_teste from '../../assets/img_teste.png'
+import icon_grafico from '../../assets/icons/icon_grafico.png'
+import icon_trabalho from '../../assets/icons/icon_trabalho.png'
 
 export function About() {
   const pilares = [
     {
-      icone: '🤝',
+      icone: icon_trabalho,
+      alt: "Icon de um aperto de mão",
       titulo: 'Atendimento Próximo',
       descricao: 'Mesmo no ambiente digital, mantemos um relacionamento humano, direto e transparente com cada cliente.'
     },
     {
-      icone: '🛡️',
+      icone: icon_trabalho,
+      alt: "Icon de um escudo",
       titulo: 'Segurança & Conformidade',
       descricao: 'Garantimos que sua empresa cumpra todas as obrigações fiscais e trabalhistas sem sobressaltos.'
     },
     {
-      icone: '📈',
+      icone: icon_grafico,
+      alt: "icon de grafico",
       titulo: 'Foco no Seu Crescimento',
       descricao: 'Analisamos seus números de forma consultiva para orientar decisões financeiras inteligentes.'
     }
@@ -24,23 +29,39 @@ export function About() {
   return (
     <section className="about" id="sobre">
       <div className="about-container">
-        
-        {/* lado esquerdo (provavel fts) */}
-        <div className="about-image-wrapper">
-          <div className="about-image-card">
-            <img 
-              src= {img_teste} 
-              alt="Equipe Econtec reunida no escritório" 
-              className="about-img"
-            />
-            <div className="about-badge">
-              <strong>Nossa sede em Cruzeta - RN</strong>
-              <span>Atendendo clientes em todo o estado e região</span>
+        <div className="about-photos-wrapper">
+          <div className="about-photos-composition">
+            
+            {/* Foto 1 */}
+            <div className="card_fotos foto1">
+              <img 
+                src= {img_teste} 
+                alt="Sede Econtec" 
+                className="about-img"
+              />
+            </div>
+
+            {/* Foto 2 */}
+            <div className="card_fotos foto2">
+              <img 
+                src= {img_teste} 
+                alt="Equipe Econtec reunida" 
+                className="about-img"
+              />
+            </div>
+
+            {/* Foto 3 */}
+            <div className="card_fotos foto3">
+              <img 
+                src= {img_teste} 
+                alt="Atendimento consultivo" 
+                className="about-img"
+              />
             </div>
           </div>
         </div>
 
-        {/* lado direito (conteudo) */}
+        {/* lado direito */}
         <div className="about-content">
           <span className="about-tag">Quem Somos</span>
           
@@ -49,18 +70,22 @@ export function About() {
           </h2>
 
           <p className="about-text">
-            Com sede em Cruzeta/RN e filial em Natal/RN, atuando no mercado há 28 anos, a <strong>Econtec</strong> une a tradição de um atendimento de confiança à agilidade das ferramentas digitais.
+            Com sede em Cruzeta/RN e filial em Natal/RN, a <strong>Econtec</strong> atua há 28 anos oferecendo soluções contábeis com confiança, proximidade e eficiência. Unimos a experiência construída ao longo de quase três décadas às ferramentas digitais que tornam a contabilidade mais ágil e acessível.
           </p>
 
           <p className="about-text">
-            Nossa missão é simplificar a rotina tributária e financeira das empresas, permitindo que os empreendedores foquem no que realmente importa: fazer o seu negócio crescer com segurança.
+            Nosso compromisso é simplificar a rotina contábil, fiscal e financeira dos nossos clientes, para que cada empreendedor possa dedicar mais tempo ao que realmente importa: fazer seu negócio crescer com segurança.
           </p>
 
-          {/* PILARES / DIFERENCIAIS RÁPIDOS */}
+          {/* pilares */}
           <div className="about-pilares">
             {pilares.map((pilar, index) => (
               <div key={index} className="pilar-item">
-                <span className="pilar-icone">{pilar.icone}</span>
+                <div className="pilar-icone-wrapper">
+                  <img src={pilar.icone} 
+                  alt={pilar.alt} 
+                  className="pilar-icone-img" />
+                </div>
                 <div>
                   <h4 className="pilar-titulo">{pilar.titulo}</h4>
                   <p className="pilar-descricao">{pilar.descricao}</p>

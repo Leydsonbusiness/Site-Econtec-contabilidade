@@ -13,11 +13,9 @@ export function Header() {
     const controlarHeader = () => {
       const scrollAtual = window.scrollY;
 
-      // Se rolou mais de 80px para baixo, esconde o header
       if (scrollAtual > ultimoScrollY && scrollAtual > 80) {
         setEscondido(true);
       } else {
-        // Se rolou para cima, mostra o header
         setEscondido(false);
       }
 
@@ -32,11 +30,18 @@ export function Header() {
     };
   }, [ultimoScrollY]);
 
-
   const rolarparaotopo = (e) => {
     e.preventDefault();
     window.scrollTo({
       top: 0, 
+      behavior: 'smooth' 
+    })
+  };
+
+  const rolarparasobre = (e) => { //Alterar
+    e.preventDefault();
+    window.scrollTo({
+      top: 780, 
       behavior: 'smooth' 
     })
   };
@@ -49,13 +54,7 @@ export function Header() {
     })
   };
 
-  const rolarparasobre = (e) => { //Alterar
-    e.preventDefault();
-    window.scrollTo({
-      top: 0, 
-      behavior: 'smooth' 
-    })
-  };
+
 
   const rolarparafaq = (e) => { //Alterar
     e.preventDefault();
@@ -86,8 +85,8 @@ return (
 
         <nav className="nav-menu">
           <a href="#inicio" className="nav-link" onClick={rolarparaotopo}>Início</a>
-          <a href="#servicos" className="nav-link" onClick={rolarparaservicos}>Serviços</a>
           <a href="#sobre" className="nav-link" onClick={rolarparasobre}>Sobre</a>
+          <a href="#servicos" className="nav-link" onClick={rolarparaservicos}>Serviços</a>          
           <a href="#faq" className="nav-link" onClick={rolarparafaq}>FAQ</a>
         </nav>
         
