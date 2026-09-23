@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Servicos/Servicos.css'
+import './Servicos.css'
 
 const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
 
