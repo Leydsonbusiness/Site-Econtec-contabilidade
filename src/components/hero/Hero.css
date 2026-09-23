@@ -97,7 +97,7 @@
 } 
 
 .btn_servicos:hover .seta_btn_servicos{
-  transform: translateY(3px);
+  transform: translateY(2px);
 }
 
 /* carrossel */
@@ -109,9 +109,9 @@
 
 .card_carrossel {
   position: relative;
-  width: 490px;
-  height: 280px;
-  border-radius: 9px;
+  width: 470px;
+  height: 316px;
+  border-radius: 13px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(15, 44, 89, 0.15);
   background-color: #111827;
@@ -126,11 +126,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: all 1s ease-in-out;
+  /* transition: all 1s ease-in-out; */
 }
 
 /* Botões */
-.carrossel-btn {
+/* .carrossel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -148,7 +148,7 @@
   opacity: 0;
   transition: opacity 0.2s ease, background-color 0.2s ease;
   z-index: 10;
-}
+} */
 
 .carrossel-btn:hover {
   background-color: rgba(0, 0, 0, 0.75);
@@ -160,35 +160,6 @@
 
 .btn-next {
   right: 1rem;
-}
-
-/* bolinhas no carrossel */
-.carrossel-indicadores {
-  position: absolute;
-  bottom: 1rem;
-  right: 1.25rem;
-  display: flex;
-  gap: 0.5rem;
-  z-index: 10;
-}
-
-.indicador-dot {
-  height: 8px;
-  width: 8px;
-  border-radius: 9999px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.6);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.indicador-dot:hover {
-  background-color: var(--white);
-}
-
-.indicador-dot.ativo {
-  width: 28px;
-  background-color: var(--accent);
 }
 
 /* metricas */
@@ -220,11 +191,6 @@
   font-weight: 800;
   color: var(--primary);
   line-height: 1;
-  transition: 0.4s ease-in;
-}
-
-.metrica_numeros:hover{
-  font-size: 2.5rem;
 }
 
 .metrica_frase {

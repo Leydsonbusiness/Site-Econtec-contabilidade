@@ -7,22 +7,22 @@ const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
 
 // Fotos carrossel 
 // import FOTO_ECONTEC1 from "../../assets/Logo_econtec.png"
-// import FOTO_ECONTEC2 from "../../assets/Logo_econtec_3D.jpg"
-import img_teste from "../../assets/img_teste.png"
+import FOTO_ECONTEC2 from "../../assets/Logo_econtec_3D.jpg"
+// import img_teste from "../../assets/img_teste.png"
 
 // Carrossel
 const FOTOS_ECONTEC = [
   {
     id: 1,
-    url: img_teste,
+    url: FOTO_ECONTEC2,
   },
   {
     id: 2,
-    url: img_teste,
+    url: FOTO_ECONTEC2,
   },
   {
     id: 3,
-    url: img_teste,
+    url: FOTO_ECONTEC2,
   }
 ];
 
@@ -64,6 +64,7 @@ function MetricCounter({ end = 0, duration = 1420, prefix = '', suffix = '', inV
 export function Hero() {
   const [indiceAtual, setIndiceAtual] = useState(0);
 
+// Carrossel
   // Avançar a foto após 3s
   useEffect(() => {
     const timer = setInterval(() => {
@@ -81,6 +82,14 @@ export function Hero() {
     setIndiceAtual((prev) => (prev === FOTOS_ECONTEC.length - 1 ? 0 : prev + 1));
   };
 
+  const rolarparaservicos = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 1660, 
+      behavior: 'smooth' 
+    })
+  };
+
   const mensagem_wpp = (e) => {
     e.preventDefault();
     if (WHATSAPP_ECONTEC) {
@@ -94,7 +103,7 @@ export function Hero() {
 // metricas
 const { ref: refMetrics, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.2
+    threshold: 0.4
   });
 
   const metrics = [
@@ -125,7 +134,7 @@ const { ref: refMetrics, inView } = useInView({
             >
               Fale conosco
             </a>
-            <a href="#servicos" className="btn_servicos">
+            <a href= "#seviços" className="btn_servicos" onClick={rolarparaservicos}>
               Nossos serviços <span className='seta_btn_servicos'>🠗</span>
             </a>
           </div>
@@ -159,7 +168,7 @@ const { ref: refMetrics, inView } = useInView({
           </div>
         </div>
       </div>
-
+      
 {/* BARRA DE MÉTRICAS */}
       <div className="container_metricas" ref={refMetrics}>
         <div className="metricas_hero">

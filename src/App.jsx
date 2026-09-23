@@ -1,8 +1,9 @@
 import React from 'react';
 import './styles/global.css';
-import { Header } from './components/Header/Header.jsx';
+import { Header } from './components/header/Header.jsx';
 import { Hero } from './components/hero/Hero.jsx';
 import { About } from './components/About/About.jsx';
+import { Services } from './components/servicos/servicos.jsx';
 
 export function App() {
   return (
@@ -11,6 +12,7 @@ export function App() {
       <main>
         <Hero />
         <About />
+        <Services />
       </main>
     </div>
   );

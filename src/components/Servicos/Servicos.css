@@ -1,0 +1,243 @@
+.services {
+  width: 100%;
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-light);
+}
+
+.services-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CABEÇALHO */
+.services-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.services-tag {
+  display: inline-block;
+  background-color: rgba(15, 44, 89, 0.08);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.services-titulo {
+  font-size: clamp(2rem, 2.3vw, 2.4rem);
+  line-height: 1.25;
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.destacar-servicos {
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  border-bottom: 4px solid var(--accent);
+  border-radius: 2px;
+  padding-bottom: 1px;
+}
+
+.services-subtitulo {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* GRID DE CARDS DE SERVIÇOS */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: var(--white);
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(15, 44, 89, 0.08);
+  border-color: rgba(15, 44, 89, 0.2);
+}
+
+/* CONTAINER E IMAGEM DO ÍCONE LOCAL */
+.service-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(15, 44, 89, 0.06);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem;
+}
+
+.service-icon-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+
+.service-card-titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.service-card-descricao {
+  font-size: 0.925rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* tags */
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-tag-item {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: #F1F5F9;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-tag-item {
+  background-color: rgba(15, 44, 89, 0.1); /* Fundo um pouco mais forte */
+  color: var(--primary-hover);              /* Ou você pode usar var(--accent) para dar o destaque verde! */
+  transform: translateY(-1px);
+}
+
+/* BOTÃO DENTRO DO CARD */
+.btn-card-servico {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: color 0.2s ease;
+}
+
+.btn-card-servico:hover {
+  color: var(--accent-hover);
+}
+
+.seta-btn-card {
+  transition: transform 0.2s ease;
+}
+
+.btn-card-servico:hover .seta-btn-card {
+  transform: translateX(4px);
+}
+
+/* BANNER CTA DE RODAPÉ DA SEÇÃO */
+.services-cta-banner {
+  margin-top: 4rem;
+  background-color: var(--primary);
+  border-radius: 16px;
+  padding: 2.5rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 15px 30px rgba(15, 44, 89, 0.15);
+}
+
+.services-cta-banner h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.services-cta-banner p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-whatsapp-banner {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  font-weight: 700;
+  padding: 0.9rem 1.8rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 208, 132, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-whatsapp-banner:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* EXPANSÃO MONITORES 2K+ (>= 1600px) */
+@media (min-width: 1600px) {
+  .services-container {
+    max-width: 1360px;
+  }
+}
+
+/* RESPONSIVIDADE MOBILE / TABLET */
+@media (max-width: 900px) {
+  .services {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .services-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+  }
+
+  .btn-whatsapp-banner {
+    width: 100%;
+    text-align: center;
+  }
+}

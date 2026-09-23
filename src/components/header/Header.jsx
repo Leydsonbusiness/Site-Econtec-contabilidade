@@ -38,10 +38,10 @@ export function Header() {
     })
   };
 
-  const rolarparasobre = (e) => { //Alterar
+  const rolarparasobre = (e) => { 
     e.preventDefault();
     window.scrollTo({
-      top: 780, 
+      top: 690, 
       behavior: 'smooth' 
     })
   };
@@ -49,12 +49,10 @@ export function Header() {
   const rolarparaservicos = (e) => { //Alterar
     e.preventDefault();
     window.scrollTo({
-      top: 0, 
+      top: 1660, 
       behavior: 'smooth' 
     })
   };
-
-
 
   const rolarparafaq = (e) => { //Alterar
     e.preventDefault();

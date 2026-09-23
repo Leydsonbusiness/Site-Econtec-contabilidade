@@ -4,13 +4,13 @@ import img_teste from '../../assets/img_teste.png'
 import icon_grafico from '../../assets/icons/icon_grafico.png'
 import icon_trabalho from '../../assets/icons/icon_trabalho.png'
 
-export function About() {
+export function About() { 
   const pilares = [
     {
       icone: icon_trabalho,
       alt: "Icon de um aperto de mão",
       titulo: 'Atendimento Próximo',
-      descricao: 'Mesmo no ambiente digital, mantemos um relacionamento humano, direto e transparente com cada cliente.'
+      descricao: 'Relacionamento direto e orientação de acordo com as necessidades de cada cliente.'
     },
     {
       icone: icon_trabalho,
