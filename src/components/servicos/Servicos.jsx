@@ -3,14 +3,22 @@ import './Servicos.css'
 
 const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
 
-// Imagens
-import img_companhia from '../../assets/icons/companhia.png'
+// icons
+import icon_abertura from '../../assets/icons/abertura.png'
+import icon_fiscal from '../../assets/icons/gestao_fiscal.png'
+import icon_cont_consultiva from '../../assets/icons/crescimento.png'
+import icon_departamento from '../../assets/icons/companhia.png'
+import icon_MEI from '../../assets/icons/MEI.png'
+import icon_crescimento from '../../assets/icons/crescimento2.png'
+
+
+
 
 export function Services() {
   const listaServicos = [
     {
       id: 'abertura',
-      icone: img_companhia,
+      icone: icon_abertura,
       alt: 'Ícone Abertura de Empresa',
       titulo: 'Abertura & Legalização',
       descricao: 'Acompanhamento completo na estruturação do seu negócio, escolha do tipo jurídico e definição do regime tributário ideal desde o primeiro dia.',
@@ -18,7 +26,7 @@ export function Services() {
     },
     {
       id: 'fiscal',
-      icone: img_companhia,
+      icone: icon_fiscal,
       alt: 'Ícone Gestão Fiscal',
       titulo: 'Gestão Fiscal & Tributária',
       descricao: 'Apuração rigorosa de impostos, entrega de obrigações acessórias e planejamento tributário focado na redução legal da sua carga de impostos.',
@@ -26,7 +34,7 @@ export function Services() {
     },
     {
       id: 'contabil',
-      icone: img_companhia,
+      icone: icon_cont_consultiva,
       alt: 'Ícone Contabilidade Consultiva',
       titulo: 'Contabilidade Consultiva',
       descricao: 'Elaboração de demonstrações contábeis e DRE organizadas para transformar dados em relatórios práticos de apoio às decisões da empresa.',
@@ -34,7 +42,7 @@ export function Services() {
     },
     {
       id: 'pessoal',
-      icone: img_companhia,
+      icone: icon_departamento,
       alt: 'Ícone Departamento Pessoal',
       titulo: 'Departamento Pessoal',
       descricao: 'Gestão completa da folha de pagamento, férias, eSocial, rotinas trabalhistas e suporte contínuo nas relações de emprego da sua empresa.',
@@ -42,7 +50,7 @@ export function Services() {
     },
     {
       id: 'mei',
-      icone: img_companhia,
+      icone: icon_MEI,
       alt: 'Ícone Suporte ao MEI',
       titulo: 'Suporte ao MEI & Pequenas Empresas',
       descricao: 'Atendimento dedicado com soluções descomplicadas para garantir que o microempreendedor individual mantenha sua empresa 100% regular.',
@@ -50,9 +58,9 @@ export function Services() {
     },
     {
       id: 'consultoria',
-      icone: img_companhia,
+      icone: icon_crescimento,
       alt: 'Ícone Consultoria Empresarial',
-      titulo: 'Consultoria Empresarial & BPO',
+      titulo: 'Consultoria Empresarial & Gestão Financeira',
       descricao: 'Análise de viabilidade, organização do fluxo de caixa e terceirização financeira estratégica para alavancar os resultados da sua empresa.',
       tags: ['Fluxo de Caixa', 'BPO Financeiro', 'Consultoria']
     }

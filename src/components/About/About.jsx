@@ -3,6 +3,8 @@ import './About.css';
 import img_teste from '../../assets/img_teste.png'
 import icon_grafico from '../../assets/icons/icon_grafico.png'
 import icon_trabalho from '../../assets/icons/icon_trabalho.png'
+import icon_seguranca from '../../assets/icons/escudo-seguro.png'
+
 
 export function About() { 
   const pilares = [
@@ -13,7 +15,7 @@ export function About() {
       descricao: 'Relacionamento direto e orientação de acordo com as necessidades de cada cliente.'
     },
     {
-      icone: icon_trabalho,
+      icone: icon_seguranca,
       alt: "Icon de um escudo",
       titulo: 'Segurança & Conformidade',
       descricao: 'Garantimos que sua empresa cumpra todas as obrigações fiscais e trabalhistas sem sobressaltos.'
