@@ -26,7 +26,7 @@ const FOTOS_ECONTEC = [
   }
 ];
 
-function MetricCounter({ end = 0, duration = 1420, prefix = '', suffix = '', inView }) {
+function MetricCounter({ end = 0, duration = 1480, prefix = '', suffix = '', inView }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -103,7 +103,7 @@ export function Hero() {
 // metricas
 const { ref: refMetrics, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.4
+    threshold: 0.5
   });
 
   const metrics = [

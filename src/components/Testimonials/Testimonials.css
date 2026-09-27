@@ -1,0 +1,234 @@
+.testimonials {
+  width: 100%;
+  padding: 5rem 1.5rem;
+  background-color: var(--white);
+  border-top: 1.5px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.testimonials-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonials-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem auto;
+}
+
+.testimonials-tag {
+  display: inline-block;
+  background-color: rgba(15, 44, 89, 0.08);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.testimonials-titulo {
+  font-size: clamp(2rem, 2.3vw, 2.4rem);
+  line-height: 1.25;
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.destacar-depoimentos {
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  border-bottom: 4px solid var(--accent);
+  border-radius: 2px;
+  padding-bottom: 2px;
+}
+
+.testimonials-subtitulo {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* CARROSSEL WRAPPER */
+.testimonials-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+/* GRID DUPLO DE CARDS */
+.testimonials-double-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  width: 100%;
+  max-width: 1000px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.4; transform: scale(0.99); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.testimonial-card {
+  background-color: var(--white);
+  border: 2px solid #dbe3ee;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 20px rgba(15, 44, 89, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 32px rgba(15, 44, 89, 0.08);
+}
+
+.testimonial-stars {
+  color: #F59E0B;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.85rem;
+}
+
+.testimonial-quote {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 1rem;
+  border-top: 1px solid #F1F5F9;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(15, 44, 89, 0.2);
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.author-company {
+  font-size: 0.825rem;
+  color: #475569;
+}
+
+.author-company strong {
+  color: var(--text-dark);
+}
+
+.author-segment {
+  font-size: 0.75rem;
+  color: var(--accent-hover);
+  font-weight: 600;
+}
+
+/* SETAS */
+.carousel-control {
+  background-color: var(--white);
+  border: 1px solid #CBD5E1;
+  color: var(--primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-control:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+/* INDICADORES */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #CBD5E1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.ativo {
+  background-color: var(--accent);
+  width: 24px;
+  border-radius: 10px;
+}
+
+/* MONITORES GRANDES */
+@media (min-width: 1600px) {
+  .testimonials-container {
+    max-width: 1360px;
+  }
+}
+
+/* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS (Em telas menores, exibe 1 por vez para não espremer) */
+@media (max-width: 820px) {
+  .testimonials-double-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-carousel-wrapper {
+    gap: 0.5rem;
+  }
+
+  .carousel-control {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}

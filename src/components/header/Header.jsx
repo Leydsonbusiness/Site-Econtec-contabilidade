@@ -38,6 +38,14 @@ export function Header() {
     })
   };
 
+  const rolarparainicio = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 47, 
+      behavior: 'smooth' 
+    })
+  };
+
   const rolarparasobre = (e) => { 
     e.preventDefault();
     window.scrollTo({
@@ -82,9 +90,10 @@ return (
         </a>
 
         <nav className="nav-menu">
-          <a href="#inicio" className="nav-link" onClick={rolarparaotopo}>Início</a>
+          <a href="#inicio" className="nav-link" onClick={rolarparainicio}>Início</a>
           <a href="#sobre" className="nav-link" onClick={rolarparasobre}>Sobre</a>
-          <a href="#servicos" className="nav-link" onClick={rolarparaservicos}>Serviços</a>          
+          <a href="#servicos" className="nav-link" onClick={rolarparaservicos}>Serviços</a>
+          <a href="#depoimentos" className="nav-link">Depoimentos</a>          
           <a href="#faq" className="nav-link" onClick={rolarparafaq}>FAQ</a>
         </nav>
         

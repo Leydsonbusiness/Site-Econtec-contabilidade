@@ -1,0 +1,75 @@
+.google-reviews {
+  width: 100%;
+  padding: 5rem 1.5rem;
+  background-color: var(--white);
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.google-reviews-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CABEÇALHO DA SEÇÃO */
+.google-reviews-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem auto;
+}
+
+.reviews-tag {
+  display: inline-block;
+  background-color: rgba(15, 44, 89, 0.08);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.reviews-titulo {
+  font-size: clamp(2rem, 2.3vw, 2.4rem);
+  line-height: 1.25;
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.destacar-reviews {
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  border-bottom: 4px solid var(--accent);
+  border-radius: 2px;
+  padding-bottom: 2px;
+}
+
+.reviews-subtitulo {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* CONTAINER DO WIDGET */
+.elfsight-widget-wrapper {
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .google-reviews {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .google-reviews-header {
+    margin-bottom: 2rem;
+  }
+}

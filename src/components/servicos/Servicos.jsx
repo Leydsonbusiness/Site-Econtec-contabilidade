@@ -127,7 +127,7 @@ export function Services() {
         <div className="services-cta-banner">
           <div>
             <h3>Não encontrou exatamente o que precisa?</h3>
-            <p>Analisamos a demanda específica do seu negócio e montamos um pacote sob medida.</p>
+            <p>Analisamos as necessidades do seu negócio e indicamos as soluções mais adequadas.</p>
           </div>
           <button 
             onClick={() => solicitarServico('Atendimento Personalizado')}

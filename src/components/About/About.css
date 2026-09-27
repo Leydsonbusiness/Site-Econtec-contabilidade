@@ -151,12 +151,15 @@
 
 .pilar-item:hover {
   transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(15, 44, 89, 0.08);
+  border-color: rgba(15, 44, 89, 0.2);
+
 }
 
 .pilar-icone-wrapper {
   width: 48px;
   height: 44px;
-  background-color: rgba(0, 66, 165, 0.644); 
+  background-color: rgba(15, 44, 89, 0.06); 
   border-radius: 10px;
   display: flex;
   align-items: center;
