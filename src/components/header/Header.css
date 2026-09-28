@@ -6,7 +6,6 @@
   position: sticky;
   top: 0;
   z-index: 100;
-
   transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -30,7 +29,6 @@
   text-decoration: none;
 }
 
-
 .logo img {
   height: 88px;          
   width: auto;           
@@ -39,7 +37,7 @@
 
 .nav-menu {
   display: flex;
-  gap: 3.3rem;
+  gap: 3rem;
   align-items: center;
 }
 
@@ -55,6 +53,37 @@
   color: blue;
 }
 
+.header_actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn_instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  transition: all 0.5s ease;
+}
+
+.btn_instagram img {
+  width: 40px;
+  height: 26px;
+}
+
+.btn_instagram:hover {
+  transform: translateY(-2px);
+}
+
+.icon_instagram_img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
 .btn-fale_conosco {
   background-color: rgb(4, 31, 119);
   color: var(--white);
@@ -63,7 +92,7 @@
   text-decoration: none;
   font-weight: 640;
   font-size: 0.9rem;
-  transition: background-color 0.5s;
+  transition: background-color 0.4s;
 }
 
 .btn-fale_conosco:hover {
@@ -77,19 +106,98 @@
   display: block;
 }
 
-/* Badge com legenda da imagem */
-.hero-image-badge {
-  position: absolute;
-  bottom: 1.25rem;
-  left: 1.25rem;
-  z-index: 10;
-  background-color: rgba(15, 44, 89, 0.85);
-  backdrop-filter: blur(4px);
-  color: var(--white);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 600;
+.menu_hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative; /* Garante o alinhamento das linhas */
+}
+
+.menu_hamburguer .linha {
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out; /* Transição suave */
+}
+
+/* ANIMAÇÃO PARA TRANSFORMAR AS 3 LINHAS EM UM X */
+.menu_hamburguer.aberto .linha:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+/* Linha do meio: desaparece suavemente */
+.menu_hamburguer.aberto .linha:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px); /* Leve efeito de deslizamento ao sumir */
+}
+
+/* Linha de baixo: gira -45 graus e sobe */
+.menu_hamburguer.aberto .linha:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* RESPONSIVIDADE CELULAR */
+@media (max-width: 880px) {
+  .header-container {
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .logo img {
+  height: 63px;          
+  }
+
+  .menu_hamburguer {
+    display: flex; /* Exibe o botão hamburguer */
+  }
+
+  .header_actions {
+    display: flex;
+  }
+
+  .btn_instagram {
+    width: 34px;
+    height: 34px;
+  }
+
+  .icon_instagram_img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .btn-fale_conosco {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem; /* Redução leve na fonte para não espremer no topo */
+  }
+
+  /* O Menu de links desliza sozinho por baixo da barra */
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-menu.ativo {
+    max-height: 300px;
+    padding: 1.5rem 0;
+    border-bottom: 2px solid #E2E8F0;
+    border-top: 0px solid #E2E8F0;
+  }
 }
 
 /*Para telas maiores*/

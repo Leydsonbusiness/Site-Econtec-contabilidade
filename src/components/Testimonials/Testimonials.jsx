@@ -5,21 +5,23 @@ export function Testimonials() {
   const depoimentos = [
     {
       id: 1,
-      nome: 'Suely Góes',
+      nome: 'Carlos Eduardo',
       cargo: 'Proprietário',
-      empresa: 'Casa do Sertanejo',
-      segmento: 'Agronegócio',
-      depoimento: 'A Casa do Sertanejo é cliente da Econtec há mais de 20 anos e só temos motivos para agradecer por essa parceria! Somos muito satisfeitos com o atendimento, a competência e a dedicação de toda a equipe. Sempre fomos muito bem atendidos, tanto na parte contábil quanto na assessoria, com profissionalismo, confiança e muita responsabilidade. É uma empresa que recomendamos de olhos fechados! Parabéns a toda a equipe da Econtec de Cruzeta pela excelente prestação de serviços. Que venham muitos mais anos dessa parceria! 👏🏼🤝🏼',
+      empresa: 'Supermercado Central',
+      segmento: 'Comércio Varejista',
+      depoimento: 'A transição para a Econtec trouxe total clareza fiscal para a nossa loja. O atendimento rápido e próximo faz toda a diferença quando precisamos tomar decisões rápidas do dia a dia no comércio.',
       estrelas: 5,
-      inicial: 'S'
+      inicial: 'C'
     },
     {
       id: 2,
-      nome: 'Lucas Costa',
-      segmento: 'Pessoa Física',
-      depoimento: 'Trabalho excepcional!Estou com a Econtec há 1 ano e mesmo morando em Brasília, tenho total tranquilidade porque eles resolvem tudo para mim com muita agilidade e profissionalismo. Recomendo muito!',
+      nome: 'Mariana Lima',
+      cargo: 'Sócia-Fundadora',
+      empresa: 'Clínica Saúde & Vida',
+      segmento: 'Serviços de Saúde',
+      depoimento: 'Há anos confiamos na gestão contábil e trabalhista da Econtec. A equipe cuida de toda a nossa folha de pagamento e obrigações fiscais com impecável pontualidade. Sempre que surge uma nova regulamentação na área da saúde, eles nos orientam com antecedência e muita transparência.',
       estrelas: 5,
-      inicial: 'L'
+      inicial: 'M'
     },
     {
       id: 3,
@@ -27,7 +29,7 @@ export function Testimonials() {
       cargo: 'Diretor de Operações',
       empresa: 'Agrícola Sertão Verde',
       segmento: 'Agronegócio',
-      depoimento: 'A orientação consultiva da Econtec foi essencial para o nosso planejamento tributário. Reduzimos custos de forma legal e organizada com o suporte deles.',
+      depoimento: 'A orientação consultiva da Econtec foi essencial para o nosso planejamento tributário. Reduzimos custos de forma legal e organizada com o suporte deles durante toda a safra.',
       estrelas: 5,
       inicial: 'R'
     },
@@ -37,7 +39,7 @@ export function Testimonials() {
       cargo: 'Gestora Financeira',
       empresa: 'Auto Peças Cruzeta',
       segmento: 'Comércio & Auto',
-      depoimento: 'Excelente suporte tanto presencial quanto digital. Sempre que temos dúvidas sobre notas fiscais ou emissões, a resposta do time da Econtec é imediata.',
+      depoimento: 'Excelente suporte tanto presencial quanto digital. Sempre que temos dúvidas sobre notas fiscais ou emissões complexas, a resposta do time da Econtec é imediata e eficiente.',
       estrelas: 5,
       inicial: 'F'
     },
@@ -45,46 +47,56 @@ export function Testimonials() {
       id: 5,
       nome: 'Lucas Medeiros',
       cargo: 'Fundador',
-      empresa: 'Medeiros Engenharia & Construção',
+      empresa: 'Medeiros Engenharia',
       segmento: 'Construção Civil',
-      depoimento: 'Trabalhar com a Econtec nos dá tranquilidade para focar nas nossas obras. A precisão nos balancetes e a agilidade nas rotinas nos poupam muito tempo.',
+      depoimento: 'Trabalhar com a Econtec nos dá tranquilidade para focar nas nossas obras. A precisão nos balancetes e a agilidade nas rotinas nos poupam muito tempo e evitam dores de cabeça.',
       estrelas: 5,
       inicial: 'L'
     },
     {
       id: 6,
-      nome: 'Mariana Lima',
-      cargo: 'Sócia-Fundadora',
-      empresa: 'Clínica Saúde & Vida',
-      segmento: 'Serviços de Saúde',
-      depoimento: 'Há anos confiamos na gestão contábil e trabalhista da Econtec. A equipe cuida de toda a nossa folha de pagamento e obrigações fiscais com impecável pontualidade.',
+      nome: 'Lucas Medeiros',
+      cargo: 'Fundador',
+      empresa: 'Medeiros Engenharia',
+      segmento: 'Construção Civil',
+      depoimento: 'Trabalhar com a Econtec nos dá tranquilidade para focar nas nossas obras. A precisão nos balancetes e a agilidade nas rotinas nos poupam muito tempo e evitam dores de cabeça.',
       estrelas: 5,
-      inicial: 'M'
-    },
+      inicial: 'L'
+    }
   ];
 
   const itensPorPagina = 2;
   const totalPaginas = Math.ceil(depoimentos.length / itensPorPagina);
   const [paginaAtual, setPaginaAtual] = useState(0);
+  
+  // Guarda qual depoimento está expandido (por ID)
+  const [expandedId, setExpandedId] = useState(null);
 
-  // Tempo em tela
+  // Troca automática a cada 6 segundos (pausa se o usuário estiver lendo um depoimento expandido)
   useEffect(() => {
+    if (expandedId !== null) return;
+
     const timer = setInterval(() => {
       proximaPagina();
-    }, 6200);
+    }, 6000);
 
     return () => clearInterval(timer);
-  }, [paginaAtual]);
+  }, [paginaAtual, expandedId]);
 
   const paginaAnterior = () => {
+    setExpandedId(null);
     setPaginaAtual((prev) => (prev === 0 ? totalPaginas - 1 : prev - 1));
   };
 
   const proximaPagina = () => {
+    setExpandedId(null);
     setPaginaAtual((prev) => (prev === totalPaginas - 1 ? 0 : prev + 1));
   };
 
-  // Pega exatamente os 2 depoimentos da página atual
+  const toggleExpand = (id) => {
+    setExpandedId((prev) => (prev === id ? null : id));
+  };
+
   const depoimentosExibidos = depoimentos.slice(
     paginaAtual * itensPorPagina,
     paginaAtual * itensPorPagina + itensPorPagina
@@ -98,16 +110,15 @@ export function Testimonials() {
         <div className="testimonials-header">
           <span className="testimonials-tag">Prova Social</span>
           <h2 className="testimonials-titulo">
-            O que nossos clientes dizem sobre a <span className="destacar-depoimentos">Econtec</span>
+            O que nossos clientes dizem <span className="destacar-depoimentos">sobre nós</span>
           </h2>
           <p className="testimonials-subtitulo">
             A parceria de confiança com empresas que impulsionam a economia da nossa região.
           </p>
         </div>
 
-        {/* CONTÊINER DO CARROSSEL */}
+        {/* CARROSSEL */}
         <div className="testimonials-carousel-wrapper">
-          
           <button 
             onClick={paginaAnterior} 
             className="carousel-control prev"
@@ -116,30 +127,47 @@ export function Testimonials() {
             ❮
           </button>
 
-          {/* GRID COM OS 2 CARDS */}
           <div className="testimonials-double-grid">
-            {depoimentosExibidos.map((item) => (
-              <div key={item.id} className="testimonial-card">
-                <div className="testimonial-stars">
-                  {'★'.repeat(item.estrelas)}
-                </div>
+            {depoimentosExibidos.map((item) => {
+              const isExpanded = expandedId === item.id;
+              
+              // Define o limite de caracteres para decidir se precisa do botão "Ler mais"
+              const precisaLerMais = item.depoimento.length > 180;
 
-                <p className="testimonial-quote">
-                  "{item.depoimento}"
-                </p>
-
-                <div className="testimonial-author">
-                  <div className="author-avatar">
-                    {item.inicial}
+              return (
+                <div key={item.id} className="testimonial-card">
+                  <div className="testimonial-stars">
+                    {'★'.repeat(item.estrelas)}
                   </div>
-                  <div className="author-info">
-                    <h4 className="author-name">{item.nome}</h4>
-                    <p className="author-company">{item.cargo} • <strong>{item.empresa}</strong></p>
-                    <span className="author-segment">{item.segmento}</span>
+
+                  <div className="quote-wrapper">
+                    <p className={`testimonial-quote ${isExpanded ? 'expandido' : 'limitado'}`}>
+                      "{item.depoimento}"
+                    </p>
+
+                    {precisaLerMais && (
+                      <button 
+                        onClick={() => toggleExpand(item.id)}
+                        className="btn-read-more"
+                      >
+                        {isExpanded ? 'Ler menos' : 'Ler mais'}
+                      </button>
+                    )}
+                  </div>
+
+                  <div className="testimonial-author">
+                    <div className="author-avatar">
+                      {item.inicial}
+                    </div>
+                    <div className="author-info">
+                      <h4 className="author-name">{item.nome}</h4>
+                      <p className="author-company">{item.cargo} • <strong>{item.empresa}</strong></p>
+                      <span className="author-segment">{item.segmento}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <button 
@@ -149,7 +177,6 @@ export function Testimonials() {
           >
             ❯
           </button>
-
         </div>
 
         {/* INDICADORES (DOTS) */}
@@ -158,7 +185,10 @@ export function Testimonials() {
             <button
               key={index}
               className={`dot ${index === paginaAtual ? 'ativo' : ''}`}
-              onClick={() => setPaginaAtual(index)}
+              onClick={() => {
+                setExpandedId(null);
+                setPaginaAtual(index);
+              }}
               aria-label={`Ir para grupo ${index + 1}`}
             />
           ))}
