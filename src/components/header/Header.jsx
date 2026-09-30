@@ -5,9 +5,10 @@ import insta_icon from "../../assets/icons/instagram_icon.png";
 
 
 const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
-const INSTAGRAM_URL = "https://www.instagram.com/leydsond_/"
+const INSTAGRAM_URL = "https://www.instagram.com/leydsond_/" //instagram econtec
 
 export function Header() {
+  // Reponsividade
 const [menuAberto, setMenuAberto] = useState(false);
 
   const toggleMenu = () => {
@@ -18,7 +19,7 @@ const [menuAberto, setMenuAberto] = useState(false);
     setMenuAberto(false);
   };
 
-  /* efeito Para subir e descer header */
+  // efeito Para subir e descer header
   const [escondido, setEscondido] = useState(false);
   const [ultimoScrollY, setUltimoScrollY] = useState(0);
 
@@ -26,7 +27,7 @@ const [menuAberto, setMenuAberto] = useState(false);
     const controlarHeader = () => {
       const scrollAtual = window.scrollY;
 
-      if (scrollAtual > ultimoScrollY && scrollAtual > 80) {
+      if (scrollAtual > ultimoScrollY && scrollAtual > 60) {
         setEscondido(true);
       } else {
         setEscondido(false);
@@ -48,51 +49,11 @@ const [menuAberto, setMenuAberto] = useState(false);
 
   const navegarPara = (e, topPosition) => {
     e.preventDefault();
-    fecharMenu(); // <--- Fecha o menu mobile ao clicar
+    fecharMenu();
     window.scrollTo({
       top: topPosition,
       behavior: 'smooth'
     });
-  };
-
-  const rolarparainicio = (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 47, 
-      behavior: 'smooth' 
-    })
-  };
-
-  const rolarparasobre = (e) => { 
-    e.preventDefault();
-    window.scrollTo({
-      top: 690, 
-      behavior: 'smooth' 
-    })
-  };
-
-  const rolarparaservicos = (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 1660, 
-      behavior: 'smooth' 
-    })
-  };
-
-  const rolarparadepoimentos = (e) => { 
-    e.preventDefault();
-    window.scrollTo({
-      top: 3170, 
-      behavior: 'smooth' 
-    })
-  };
-
-  const rolarparafaq = (e) => { //Alterar
-    e.preventDefault();
-    window.scrollTo({
-      top: 0, 
-      behavior: 'smooth' 
-    })
   };
   
   const WhatsappClick = (e) => {
@@ -119,26 +80,27 @@ return (
           <a href="#sobre" className="nav-link" onClick={(e) => navegarPara(e, 1180)}>Sobre</a>
           <a href="#servicos" className="nav-link" onClick={(e) => navegarPara(e, 2790)}>Serviços</a>
           <a href="#depoimentos" className="nav-link" onClick={(e) => navegarPara(e, 5755)}>Depoimentos</a>          
-          <a href="#faq" className="nav-link" onClick={rolarparafaq}>FAQ</a>
+          <a href="#faq" className="nav-link" onClick={(e) => navegarPara(e, 0)}>FAQ</a>
+        
+          {/* Botões formulario e instagram */}
+          <div className='header_actions'> 
+            <a 
+            href={INSTAGRAM_URL}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='btn_instagram'
+            aria-label='Instagram da Econtec'
+            >
+              <img src={insta_icon} alt="Instagram" className='icon_instagram_img'/>
+            </a> 
+
+            <a href="#formulario" className="btn-fale-conosco">
+              Fale Conosco
+            </a>
+          </div>
         </nav>
 
-        <div className='header_actions'> 
-          <a 
-          href={INSTAGRAM_URL}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='btn_instagram'
-          aria-label='Instagram da Econtec'
-          >
-            <img src={insta_icon} alt="Instagram" className='icon_instagram_img'/>
-          </a> 
-
-          <a href="#formulario" className="btn-fale_conosco">
-            Fale Conosco
-          </a>
-        </div>
-
-        {/* BOTÃO MENU HAMBURGUER (MOBILE) */}
+        {/* menu hamburguer */}
         <button 
           className={`menu_hamburguer ${menuAberto ? 'aberto' : ''}`}
           onClick={toggleMenu}

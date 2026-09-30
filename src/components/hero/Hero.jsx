@@ -8,24 +8,10 @@ const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
 // Fotos carrossel 
 // import FOTO_ECONTEC1 from "../../assets/Logo_econtec.png"
 import FOTO_ECONTEC2 from "../../assets/Logo_econtec_3D.jpg"
+import seta from "../../assets/icons/icon_seta-para-baixo.png"
 // import img_teste from "../../assets/img_teste.png"
 
-// Carrossel
-const FOTOS_ECONTEC = [
-  {
-    id: 1,
-    url: FOTO_ECONTEC2,
-  },
-  {
-    id: 2,
-    url: FOTO_ECONTEC2,
-  },
-  {
-    id: 3,
-    url: FOTO_ECONTEC2,
-  }
-];
-
+// Métricas animadas
 function MetricCounter({ end = 0, duration = 1480, prefix = '', suffix = '', inView }) {
   const [count, setCount] = useState(0);
 
@@ -62,9 +48,10 @@ function MetricCounter({ end = 0, duration = 1480, prefix = '', suffix = '', inV
 }
 
 export function Hero() {
+
+  // Carrossel
   const [indiceAtual, setIndiceAtual] = useState(0);
 
-// Carrossel
   // Avançar a foto após 3s
   useEffect(() => {
     const timer = setInterval(() => {
@@ -81,6 +68,12 @@ export function Hero() {
   const proximaFoto = () => {
     setIndiceAtual((prev) => (prev === FOTOS_ECONTEC.length - 1 ? 0 : prev + 1));
   };
+  const FOTOS_ECONTEC = [
+  {
+    id: 1,
+    url: FOTO_ECONTEC2,
+  },
+];
 
   const rolarparaservicos = (e) => {
     e.preventDefault();
@@ -127,15 +120,10 @@ const { ref: refMetrics, inView } = useInView({
           </p>
           
           <div className="hero_bt">
-            <a 
-              href="#whatsapp" 
-              onClick={mensagem_wpp}
-              className="btn_whatsapp"
-            >
-              Fale conosco
-            </a>
+            <a href="#formulario" onClick={mensagem_wpp} className="btn_whatsapp"> 
+              Fale conosco </a>
             <a href= "#seviços" className="btn_servicos" onClick={rolarparaservicos}>
-              Nossos serviços <span className='seta_btn_servicos'>🠗</span>
+              Nossos serviços <img className='seta_servicos' src={seta} alt="seta para baixo"/>
             </a>
           </div>
         </div>
@@ -145,11 +133,11 @@ const { ref: refMetrics, inView } = useInView({
           <div className="card_carrossel">
             <img 
               src={FOTOS_ECONTEC[indiceAtual].url} 
-              alt={"Fotos_Econtec"} 
+              alt="Fotos_Econtec"
               className="carrossel_img"
             />
 
-            {/* ======= botoes carrossel ======= */}
+            {/* ======= botoes carrossel =======
             <button 
               onClick={fotoAnterior}
               className="carrossel-btn btn-prev"
@@ -163,7 +151,7 @@ const { ref: refMetrics, inView } = useInView({
               aria-label="Próxima foto"
             >
               ❯
-            </button>
+            </button> */}
 
           </div>
         </div>

@@ -19,7 +19,7 @@
   line-height: 1.2;
   color: var(--primary);
   font-weight: 800;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.3rem;
 }
 
 .destacar_titulo {
@@ -33,10 +33,10 @@
 }
 
 .hero_subtitulo {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 2.3rem;
-  max-width: 520px;
+  font-size: 1.23rem;
+  color: #4a5568;;
+  margin-bottom: 2.5rem;
+  max-width: 550px;
   line-height: 1.6;
 }
 
@@ -87,17 +87,15 @@
   color: var(--white);
 }
 
-.seta_btn_servicos{
-  font-size: 1.3rem;
-  line-height: 1;
-  margin-top: 3px;
-  margin-left: 5px;
-  display: inline-block;
+.btn_servicos img{
+  width: 25px;
+  margin-top: 1px;
   transition: all 0.4s ease;
 } 
 
-.btn_servicos:hover .seta_btn_servicos{
+.btn_servicos:hover img{
   transform: translateY(2px);
+  filter: brightness(0) invert(1); /* muda a cor da seta para branco */
 }
 
 /* carrossel */
@@ -200,31 +198,60 @@
   font-weight: 500;
 }
 
-/*Responsividade monitores maiores*/
-@media (min-width: 1600px) {
-  .hero_container,
-  .metricas_hero {
-    max-width: 1360px;
-  }}
-
-/* responsividade celular */
+/* responsividade de celular */
 @media (max-width: 768px) {
-  .hero_container {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+  .hero {
+  width: 100%;
+  padding: 1.6rem 1.3rem 0 1.3rem;
   }
 
-  .hero_titulo,
-  .destacar {
+  .hero_container {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 2.1rem;
+  }
+
+  .hero_titulo {
     font-size: 2rem;
+    max-width: 380px;
+  }
+
+  .hero_subtitulo {
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 340px; /* Controla a largura máxima */
+  margin-bottom: 1.5rem;
+}
+
+.destacar_subtitulo {
+  font-weight: bold;
+  color:black
+}
+
+  .hero_bt {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn_whatsapp{
+    padding: 0.9rem 1.4rem;
+    white-space: nowrap; /* Evita que o texto quebre linha */
+  }
+
+  .btn_servicos {
+    padding: 0.75rem 0.7rem;
   }
 
   .hero_container_carrossel {
-    max-width: 100%;
+    max-width:90%;
   }
 
   .card_carrossel {
-    height: 280px;
+    height: 200px;
+    width: 300px;
   }
 
   .metricas_hero {
@@ -232,3 +259,10 @@
     gap: 1.5rem;
   }
 }
+
+/*Responsividade monitores maiores*/
+@media (min-width: 1600px) {
+  .hero_container,
+  .metricas_hero {
+    max-width: 1360px;
+  }}

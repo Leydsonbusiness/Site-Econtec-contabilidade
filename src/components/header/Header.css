@@ -17,7 +17,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.75rem 4rem;
+  padding: 0.92rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,23 +30,24 @@
 }
 
 .logo img {
-  height: 88px;          
+  height: 98px;          
   width: auto;           
   object-fit: contain;
 }
 
 .nav-menu {
   display: flex;
-  gap: 3rem;
   align-items: center;
+  gap: 1rem;
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--text-dark);
-  font-weight: 500;
-  font-size: 1.1rem;
+  font-weight: 530;
+  font-size: 1.2rem;
   transition: color 0.2s;
+  padding-right: 32px;
 }
 
 .nav-link:hover {
@@ -56,7 +57,8 @@
 .header_actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.1rem;
+  padding-left:68px;/* centralizar o nav-link  */
 }
 
 .btn_instagram {
@@ -65,16 +67,19 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease;
 }
 
 .btn_instagram img {
-  width: 40px;
-  height: 26px;
+  width: 45px;
+  height: 28px;
+  object-fit: contain;
+  transition: all 0.5s ease;
 }
 
 .btn_instagram:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  filter: brightness(0) saturate(100%) invert(11%) sepia(100%) saturate(6934%) hue-rotate(244deg) brightness(97%) contrast(153%);
 }
 
 .icon_instagram_img {
@@ -84,18 +89,18 @@
   display: block;
 }
 
-.btn-fale_conosco {
+.btn-fale-conosco {
   background-color: rgb(4, 31, 119);
   color: var(--white);
   padding: 0.6rem 1.25rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 640;
-  font-size: 0.9rem;
+  font-size: 1.01rem;
   transition: background-color 0.4s;
 }
 
-.btn-fale_conosco:hover {
+.btn-fale-conosco:hover {
   background-color: rgb(5, 21, 49);
 }
 
@@ -116,7 +121,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  position: relative; /* Garante o alinhamento das linhas */
+  position: relative; 
 }
 
 .menu_hamburguer .linha {
@@ -124,10 +129,9 @@
   height: 3px;
   background-color: var(--primary);
   border-radius: 2px;
-  transition: all 0.3s ease-in-out; /* Transição suave */
+  transition: all 0.3s ease-in-out; 
 }
 
-/* ANIMAÇÃO PARA TRANSFORMAR AS 3 LINHAS EM UM X */
 .menu_hamburguer.aberto .linha:nth-child(1) {
   transform: translateY(8.5px) rotate(45deg);
 }
@@ -138,20 +142,20 @@
   transform: translateX(-10px); /* Leve efeito de deslizamento ao sumir */
 }
 
-/* Linha de baixo: gira -45 graus e sobe */
 .menu_hamburguer.aberto .linha:nth-child(3) {
   transform: translateY(-8.5px) rotate(-45deg);
 }
 
 /* RESPONSIVIDADE CELULAR */
-@media (max-width: 880px) {
+@media (max-width: 768px) {
   .header-container {
+    width: 100%;
     padding: 0.75rem 1rem;
     gap: 0.5rem;
   }
 
   .logo img {
-  height: 63px;          
+  height: 73px;          
   }
 
   .menu_hamburguer {
@@ -160,6 +164,7 @@
 
   .header_actions {
     display: flex;
+    padding-right: 27px;
   }
 
   .btn_instagram {
@@ -174,10 +179,9 @@
 
   .btn-fale_conosco {
     padding: 0.5rem 0.85rem;
-    font-size: 0.8rem; /* Redução leve na fonte para não espremer no topo */
+    font-size: 2rem;
   }
 
-  /* O Menu de links desliza sozinho por baixo da barra */
   .nav-menu {
     position: absolute;
     top: 100%;
@@ -186,17 +190,29 @@
     background-color: var(--white);
     flex-direction: column;
     gap: 1.25rem;
-    padding: 0;
+    padding-right: 0;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.35s ease-in-out;
   }
 
   .nav-menu.ativo {
-    max-height: 300px;
-    padding: 1.5rem 0;
-    border-bottom: 2px solid #E2E8F0;
+    max-height: 420px;
+    padding-left: 40px;
+    padding-top: 1rem;
     border-top: 0px solid #E2E8F0;
+  }
+
+
+  .header_actions{
+    margin-top: 0.5rem;
+    padding-top: 1.25rem;
+    padding-right: 80px;
+    padding-bottom: 1.2rem;
+    border-top: 3px solid #E2E8F0 ;
+    width: 100%;
+    justify-content: center;
   }
 }
 
