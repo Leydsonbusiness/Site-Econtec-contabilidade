@@ -56,7 +56,7 @@
 /* GRID DE CARDS DE SERVIÇOS */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 3fr));
   gap: 2rem;
 }
 
@@ -98,7 +98,7 @@
 }
 
 .service-card-titulo {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 0.75rem;
@@ -164,7 +164,102 @@
   transform: translateX(4px);
 }
 
-/* banner serviços extras */
+/* Serviço consultoria empresarial */
+.service-extra {
+  margin-top: 3rem;
+  background-color: var(--white);
+  border: 2px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 15px 30px rgba(15, 44, 89, 0.08);
+  transition: all 0.3s ease;
+}
+
+.service-extra:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(15, 44, 89, 0.08);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo da Logo à esquerda */
+.service-extra-logo {
+  width: 145px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0; /* Impede a logo de encolher */
+}
+
+.service-extra-content {
+  flex: 1;
+}
+
+.service-extra h3 {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  line-height: 1.25;
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.service-extra p {
+  font-size: 1rem;
+  color: #353f4d;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Estilo das Tags */
+.service-extra-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.8rem
+}
+
+.tag {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: #F1F5F9;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.service-extra:hover .tag {
+  background-color: rgba(15, 44, 89, 0.1); 
+  color: var(--primary-hover);              
+  transform: translateY(-1px);
+}
+
+/* Botão */
+.btn-consultoria {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  font-weight: 700;
+  padding: 0.9rem 1.8rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 5px 3px 8px rgba(0, 208, 132, 0.25);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-consultoria:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 8px 20px rgba(0, 208, 132, 0.25);
+}
+
+
+/* banner serviços personalizados */
 .services-cta-banner {
   margin-top: 4rem;
   background-color: var(--primary);
@@ -208,15 +303,15 @@
   transform: translateY(-3px);
 }
 
-/* EXPANSÃO MONITORES 2K+ (>= 1600px) */
+/* EXPANSÃO MONITORES maiores */
 @media (min-width: 1600px) {
   .services-container {
     max-width: 1360px;
   }
 }
 
-/* RESPONSIVIDADE MOBILE / TABLET */
-@media (max-width: 900px) {
+/* responsividade celular*/
+@media (max-width: 768px) {
   .services {
     padding: 3.5rem 1.25rem;
   }
@@ -227,6 +322,22 @@
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-extra {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.2rem 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .service-extra-logo {
+    width: 110px;
+  }
+
+  .btn-consultoria {
+    width: 100%;
+    text-align: center;
   }
 
   .services-cta-banner {

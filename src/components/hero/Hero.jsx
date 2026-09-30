@@ -116,7 +116,7 @@ const { ref: refMetrics, inView } = useInView({
           </h1>
           
           <p className="hero_subtitulo">
-            Há <span className='destacar_subtitulo'>28 anos</span> ajudando empresas a crescerem com segurança fiscal, organização financeira e atendimento próximo.
+            Há <span className='destacar_subtitulo'>28 anos</span> ajudando pessoas e empresas a crescerem com segurança fiscal, organização financeira e atendimento próximo.
           </p>
           
           <div className="hero_bt">

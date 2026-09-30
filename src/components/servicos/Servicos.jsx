@@ -2,14 +2,16 @@ import React from 'react';
 import './Servicos.css'
 
 const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
+const WHATSAPP_CONSULTORIA = import.meta.env.VITE_Whatsapp_consultoria;
 
 // icons
 import icon_abertura from '../../assets/icons/abertura.png'
 import icon_fiscal from '../../assets/icons/gestao_fiscal.png'
-import icon_cont_consultiva from '../../assets/icons/crescimento.png'
+import icon_cont_consultiva from '../../assets/icons/crescimento2.png'
 import icon_departamento from '../../assets/icons/companhia.png'
 import icon_MEI from '../../assets/icons/MEI.png'
-import icon_crescimento from '../../assets/icons/crescimento2.png'
+import icon_imposto from '../../assets/icons/text-editor.png'
+import logo_seilhagoes from '../../assets/logo_seilhagoes.png'
 
 
 
@@ -22,7 +24,7 @@ export function Services() {
       alt: 'Ícone Abertura de Empresa',
       titulo: 'Abertura & Legalização',
       descricao: 'Acompanhamento completo na estruturação do seu negócio, escolha do tipo jurídico e definição do regime tributário ideal desde o primeiro dia.',
-      tags: ['CNPJ', 'Contrato Social', 'Licenças']
+      tags: [ 'Contrato Social', 'CNPJ', 'Licenças', 'Inscrição Estadual/Municipal' ]
     },
     {
       id: 'fiscal',
@@ -30,7 +32,7 @@ export function Services() {
       alt: 'Ícone Gestão Fiscal',
       titulo: 'Gestão Fiscal & Tributária',
       descricao: 'Apuração rigorosa de impostos, entrega de obrigações acessórias e planejamento tributário focado na redução legal da sua carga de impostos.',
-      tags: ['Simples Nacional', 'Lucro Presumido', 'Nota Fiscal']
+      tags: ['Simples Nacional', 'Lucro Presumido', 'Lucro Real']
     },
     {
       id: 'contabil',
@@ -57,13 +59,13 @@ export function Services() {
       tags: ['DAS-MEI', 'Declaração Anual', 'Desenquadramento']
     },
     {
-      id: 'consultoria',
-      icone: icon_crescimento,
+      id: 'declaracao_de_imposto',
+      icone: icon_imposto,
       alt: 'Ícone Consultoria Empresarial',
-      titulo: 'Consultoria Empresarial & Gestão Financeira',
-      descricao: 'Análise de viabilidade, organização do fluxo de caixa e terceirização financeira estratégica para alavancar os resultados da sua empresa.',
-      tags: ['Fluxo de Caixa', 'BPO Financeiro', 'Consultoria']
-    }
+      titulo: 'Declaração de Imposto de Renda PF (IRPF)',
+      descricao: 'Elaboração e envio da sua declaração com análise de rendimentos, bens e deduções, garantindo mais segurança e precisão nas informações declaradas.',
+      tags: ['IRPF', 'Deduções', 'Bens & Rendimentos']
+    },
   ];
 
   const solicitarServico = (tituloServico) => {
@@ -71,6 +73,16 @@ export function Services() {
       const mensagem = `Olá! Gostaria de mais informações sobre o serviço de *${tituloServico}*.`;
       window.open(
         `https://wa.me/${WHATSAPP_ECONTEC}?text=${encodeURIComponent(mensagem)}`,
+        '_blank'
+      );
+    }
+  }
+  
+  const solicitarConsultoria = (tituloServico) => {
+    if (WHATSAPP_ECONTEC) {
+      const mensagem = `Olá! Gostaria de mais informações sobre o serviço de *${tituloServico}*.`;
+      window.open(
+        `https://wa.me/${WHATSAPP_CONSULTORIA}?text=${encodeURIComponent(mensagem)}`,
         '_blank'
       );
     }
@@ -122,6 +134,36 @@ export function Services() {
             </div>
           ))}
         </div>
+
+        <div className='service-extra'>
+          {/* Logo */}
+          <img 
+            src={logo_seilhagoes} 
+            alt="Consultoria Empresarial Seilha Góes" 
+            className="service-extra-logo" 
+          />
+        
+          {/* Conteúdo central (Tags, Título e Descrição) */}
+          <div className='service-extra-content'>
+            <h3>Precisa de uma Consultoria Empresarial?</h3>
+            <p>A Econtec conta com a parceria da consultora empresarial Seilha Góes, oferecendo soluções estratégicas para gestão e desenvolvimento de negócios.</p>
+
+            <div className='service-extra-tags'>
+              <span className='tag'>Parceria Estratégica</span>
+              <span className='tag'>Gestão & Processos</span>
+              <span className='tag'>BPO Financeiro</span>     
+              <span className='tag'>Planejamento Tributário</span>                       
+            </div>
+          </div>
+
+          <button 
+            onClick={() => solicitarConsultoria('Consultoria empresarial')}
+            className="btn-consultoria"
+          >
+            Conhecer a consultoria
+          </button>
+        </div>
+
 
         {/* BANNER CTA DE RODAPÉ DA SEÇÃO */}
         <div className="services-cta-banner">

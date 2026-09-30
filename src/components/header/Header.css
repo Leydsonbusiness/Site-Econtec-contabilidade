@@ -30,7 +30,7 @@
 }
 
 .logo img {
-  height: 98px;          
+  height: 103px;          
   width: auto;           
   object-fit: contain;
 }
@@ -199,7 +199,6 @@
 
   .nav-menu.ativo {
     max-height: 420px;
-    padding-left: 40px;
     padding-top: 1rem;
     border-top: 0px solid #E2E8F0;
   }
@@ -210,7 +209,7 @@
     padding-top: 1.25rem;
     padding-right: 80px;
     padding-bottom: 1.2rem;
-    border-top: 3px solid #E2E8F0 ;
+    border-top: 1px solid #E2E8F0 ;
     width: 100%;
     justify-content: center;
   }

@@ -107,9 +107,9 @@
 
 .card_carrossel {
   position: relative;
-  width: 470px;
-  height: 316px;
-  border-radius: 13px;
+  width: 490px;
+  height: 346px;
+  border-radius:12px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(15, 44, 89, 0.15);
   background-color: #111827;
@@ -148,7 +148,7 @@
   z-index: 10;
 } */
 
-.carrossel-btn:hover {
+/* .carrossel-btn:hover {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
@@ -158,7 +158,7 @@
 
 .btn-next {
   right: 1rem;
-}
+} */
 
 /* metricas */
 .container_metricas {
