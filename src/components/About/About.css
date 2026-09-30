@@ -1,6 +1,6 @@
 .about {
   width: 100%;
-  padding: 5rem 1.5rem;
+  padding: 4rem 1.5rem;
   background-color: var(--white);
   border-top: 1px solid #E2E8F0;
   border-bottom: 1px solid #E2E8F0;
@@ -191,15 +191,24 @@
 }
 
 /* responsividade */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .about-container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
     gap: 2.5rem;
   }
 
   .about-photos-composition {
     max-width: 320px;
     height: 380px;
+  }
+
+  .about-content{
+    margin-bottom: 2em;
+  }
+
+  .about-tag{
+    margin-bottom: 1.2rem;
   }
 
   .card_fotos {

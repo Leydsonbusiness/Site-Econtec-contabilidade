@@ -164,7 +164,7 @@
 .container_metricas {
   max-width: 1200px;
   margin: 4rem auto 0 auto;
-  border-top: 1px solid #d9dde4;
+  border-top: 1px solid #c1c6cf;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -246,7 +246,7 @@
   }
 
   .hero_container_carrossel {
-    max-width:90%;
+    max-width:100%;
   }
 
   .card_carrossel {
