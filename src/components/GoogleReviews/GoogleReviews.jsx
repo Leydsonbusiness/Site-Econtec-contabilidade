@@ -15,9 +15,8 @@ export function GoogleReviews() {
   }, []);
 
   return (
-    <section className="google-reviews" id="avaliacoes">
+    <section className="google-reviews">
       <div className="google-reviews-container">
-        {/* CABEÇALHO DA SEÇÃO */}
         <div className="google-reviews-header">
           <h2 className="reviews-titulo">
             Avaliações do Econtec no <span className='destacar-reviews'>Google</span>

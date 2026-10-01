@@ -47,14 +47,24 @@ const [menuAberto, setMenuAberto] = useState(false);
     };
   }, [ultimoScrollY, menuAberto]);
 
-  const navegarPara = (e, topPosition) => {
-    e.preventDefault();
-    fecharMenu();
+const navegarPara = (e, idSecao) => {
+  e.preventDefault();
+  fecharMenu();
+  if (idSecao === 'inicio' || idSecao === 0) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+  const elemento = document.getElementById(idSecao);
+
+  if (elemento) {
+    const posicaoFinal = elemento.getBoundingClientRect().top + window.pageYOffset;
+
     window.scrollTo({
-      top: topPosition,
+      top: posicaoFinal,
       behavior: 'smooth'
     });
-  };
+  }
+};
   
   const WhatsappClick = (e) => {
     e.preventDefault();
@@ -76,11 +86,11 @@ return (
         </a>
 
         <nav className={`nav-menu ${menuAberto ? 'ativo' : ''}`}>
-          <a href="#inicio" className="nav-link" onClick={(e) => navegarPara(e, 0)}>Início</a>
-          <a href="#sobre" className="nav-link" onClick={(e) => navegarPara(e, 1180)}>Sobre</a>
-          <a href="#servicos" className="nav-link" onClick={(e) => navegarPara(e, 2790)}>Serviços</a>
-          <a href="#depoimentos" className="nav-link" onClick={(e) => navegarPara(e, 5755)}>Depoimentos</a>          
-          <a href="#faq" className="nav-link" onClick={(e) => navegarPara(e, 0)}>FAQ</a>
+          <a href="#inicio" className="nav-link" onClick={(e) => navegarPara(e, 'inicio')}>Início</a>
+          <a href="#sobre" className="nav-link" onClick={(e) => navegarPara(e, 'sobre')}>Sobre</a>
+          <a href="#servicos" className="nav-link" onClick={(e) => navegarPara(e, 'servicos')}>Serviços</a>
+          <a href="#depoimentos" className="nav-link" onClick={(e) => navegarPara(e, 'depoimentos')}>Depoimentos</a>          
+          <a href="#faq" className="nav-link" onClick={(e) => navegarPara(e, 'faq')}>FAQ</a>
         
           {/* Botões formulario e instagram */}
           <div className='header_actions'> 

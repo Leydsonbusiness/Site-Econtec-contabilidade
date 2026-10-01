@@ -1,9 +1,9 @@
 .testimonials {
   width: 100%;
-  padding: 5rem 1.5rem;
-  padding-bottom: 2rem;
-  background-color: var(--white);
+  padding: 3.2rem 1.5rem 4rem 0.5rem;
+  background-color: var(--white, #ffffff);
   border-top: 2px solid #E2E8F0;
+  box-sizing: border-box;
 }
 
 .testimonials-container {
@@ -12,6 +12,7 @@
   margin: 0 auto;
 }
 
+/* --- CABEÇALHO --- */
 .testimonials-header {
   text-align: center;
   max-width: 720px;
@@ -21,7 +22,7 @@
 .testimonials-tag {
   display: inline-block;
   background-color: rgba(15, 44, 89, 0.08);
-  color: var(--primary);
+  color: var(--primary, #0f2c59);
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.35rem 0.85rem;
@@ -32,9 +33,9 @@
 }
 
 .testimonials-titulo {
-  font-size: clamp(2rem, 2.3vw, 2.4rem);
+  font-size: clamp(1.8rem, 2.3vw, 2.4rem);
   line-height: 1.25;
-  color: var(--primary);
+  color: var(--primary, #0f2c59);
   font-weight: 800;
   margin-bottom: 1rem;
 }
@@ -43,7 +44,7 @@
   font-size: inherit;
   position: relative;
   display: inline-block;
-  border-bottom: 4px solid var(--accent);
+  border-bottom: 4px solid var(--accent, #f59e0b);
   border-radius: 2px;
   padding-bottom: 2px;
 }
@@ -54,49 +55,64 @@
   line-height: 1.6;
 }
 
-/* CARROSSEL WRAPPER */
+/* --- carrossel --- */
 .testimonials-carousel-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
+  width: 100%;
 }
 
-/* GRID DUPLO DE CARDS */
-.testimonials-double-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.75rem;
+.testimonials-drag-area {
   width: 100%;
   max-width: 1000px;
-  animation: fadeIn 0.4s ease-in-out;
+  overflow: hidden;
+  position: relative;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0.4; transform: scale(0.99); }
-  to { opacity: 1; transform: scale(1); }
+.testimonials-grid.draggable {
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
 }
 
+.testimonials-grid.draggable:active {
+  cursor: grabbing;
+}
+
+.testimonials-grid {
+  display: grid;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.testimonials-grid.double-column {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.testimonials-grid.single-column {
+  grid-template-columns: 1fr;
+}
+
+/* depoimentos */
 .testimonial-card {
-  background-color: var(--white);
-  border: 1px solid #E2E8F0;
-  border-radius: 16px;
+  background-color: var(--white, #ffffff);
+  border: 2px solid #E2E8F0;
+  border-radius: 18px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 8px 20px rgba(15, 44, 89, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(15, 44, 89, 0.08);
+  box-shadow: 0 18px 30px rgba(15, 44, 89, 0.04);
+  min-height: 280px;
+  box-sizing: border-box;
 }
 
 .testimonial-stars {
-  color: #F59E0B;
+  color: #f5d20b;
   font-size: 1.2rem;
   letter-spacing: 2px;
   margin-bottom: 0.85rem;
@@ -134,7 +150,7 @@
 .btn-read-more {
   background: none;
   border: none;
-  color: var(--primary);
+  color: var(--primary, #0f2c59);
   font-weight: 700;
   font-size: 0.8rem;
   cursor: pointer;
@@ -146,30 +162,38 @@
 }
 
 .btn-read-more:hover {
-  color: var(--accent-hover);
+  color: var(--accent-hover, #d97706);
 }
 
+/* logo das empresas */
 .testimonial-author {
   display: flex;
   align-items: center;
   gap: 0.85rem;
   padding-top: 1rem;
-  border-top: 1px solid #F1F5F9;
+  border-top: 2px solid #F1F5F9;
 }
 
 .author-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--primary);
-  color: var(--white);
-  font-weight: 700;
-  font-size: 1.1rem;
+  width: 66px;
+  height: 62px;
+  border-radius: 17px;
+  background-color: #F8FAFC;
+  border: 2px solid #E2E8F0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(15, 44, 89, 0.2);
+  overflow: hidden;
+  padding: 2px;
+  box-shadow: 0 2px 8px rgba(15, 44, 89, 0.06);
+}
+
+.company-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 .author-info {
@@ -180,29 +204,30 @@
 .author-name {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary, #0f2c59);
+  margin: 0;
 }
 
 .author-company {
   font-size: 0.825rem;
   color: #475569;
+  margin: 2px 0;
 }
 
 .author-company strong {
-  color: var(--text-dark);
+  color: var(--text-dark, #0f172a);
 }
 
 .author-segment {
   font-size: 0.75rem;
-  color: var(--accent-hover);
+  color: var(--accent-hover, #d97706);
   font-weight: 600;
 }
 
-/* SETAS */
 .carousel-control {
-  background-color: var(--white);
+  background-color: var(--white, #ffffff);
   border: 1px solid #CBD5E1;
-  color: var(--primary);
+  color: var(--primary, #0f2c59);
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -214,20 +239,21 @@
   transition: all 0.2s ease;
   flex-shrink: 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  z-index: 2;
 }
 
 .carousel-control:hover {
-  background-color: var(--primary);
-  color: var(--white);
-  border-color: var(--primary);
-  transform: scale(1.05);
+  background-color: var(--primary, #0f2c59);
+  color: var(--white, #ffffff);
+  border-color: var(--primary, #0f2c59);
+  transform: scaleX(1.05);
 }
 
-/* INDICADORES (DOTS) */
+/* --- INDICADORES (DOTS) --- */
 .carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   margin-top: 2rem;
 }
 
@@ -242,24 +268,32 @@
 }
 
 .dot.ativo {
-  background-color: var(--accent);
-  width: 24px;
+  background-color: #1f4783;
+  width: 25px;
   border-radius: 10px;
 }
 
-/* RESPONSIVIDADE */
+/* responsividade */
 @media (max-width: 768px) {
-  .testimonials-double-grid {
-    grid-template-columns: repeat(1, 1fr);
+  .testimonials {
+    padding: 3rem 1rem 2rem 1rem;
   }
 
-  .testimonials-carousel-wrapper {
-    gap: 0.5rem;
+  .testimonials-header {
+    margin-bottom: 2rem;
+  }
+
+  .testimonial-card {
+    padding: 1.25rem;
+    min-height: auto;
   }
 
   .carousel-control {
-    width: 36px;
-    height: 36px;
-    font-size: 0.9rem;
+    display: none;
+  }
+
+  .author-avatar {
+    width: 44px;
+    height: 44px;
   }
 }

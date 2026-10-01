@@ -6,6 +6,7 @@ import { About } from './components/About/About.jsx';
 import { Services } from "./components/servicos/Servicos.jsx";
 import { Testimonials } from './components/Testimonials/Testimonials.jsx';
 import { GoogleReviews } from './components/GoogleReviews/GoogleReviews.jsx';
+import { Faq } from './components/Faq/Faq.jsx';
 
 export function App() {
   return (
@@ -17,6 +18,7 @@ export function App() {
         <Services />
         <Testimonials />
         <GoogleReviews />
+        <Faq />
       </main>
     </div>
   );

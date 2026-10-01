@@ -111,13 +111,13 @@
   height: 346px;
   border-radius:12px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(15, 44, 89, 0.15);
+  box-shadow: 0 25px 40px rgba(15, 44, 89, 0.15);
   background-color: #111827;
 }
 
-.card_carrossel:hover .carrossel-btn {
+/* .card_carrossel:hover .carrossel-btn {
   opacity: 1;
-}
+} */
 
 .carrossel_img {
   width: 100%;
@@ -212,8 +212,12 @@
   }
 
   .hero_titulo {
-    font-size: 2rem;
+    font-size: 1.92rem;
     max-width: 380px;
+  }
+
+  .destacar_titulo{
+    font-size: 2.3rem;
   }
 
   .hero_subtitulo {
@@ -247,6 +251,7 @@
 
   .hero_container_carrossel {
     max-width:100%;
+    place-items: center; /* Centraliza a imagem no grid */ 
   }
 
   .card_carrossel {

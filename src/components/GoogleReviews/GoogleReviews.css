@@ -1,6 +1,6 @@
 .google-reviews {
   width: 100%;
-  padding: rem 1.5rem;
+  padding-bottom: 2rem;
   background-color: var(--white);
 }
 
@@ -14,7 +14,7 @@
 .google-reviews-header {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 2.3rem auto;
 }
 
 .reviews-tag {

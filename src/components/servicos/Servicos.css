@@ -57,7 +57,7 @@
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 3fr));
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .service-card {
@@ -77,7 +77,6 @@
   border-color: rgba(15, 44, 89, 0.2);
 }
 
-/* CONTAINER */
 .service-icon-wrapper {
   width: 50px;
   height: 50px;
@@ -170,7 +169,7 @@
   background-color: var(--white);
   border: 2px solid #E2E8F0;
   border-radius: 16px;
-  padding: 2.5rem;
+  padding: 1.7rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -185,12 +184,11 @@
   border-color: rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo da Logo à esquerda */
 .service-extra-logo {
   width: 145px;
   height: auto;
   object-fit: contain;
-  flex-shrink: 0; /* Impede a logo de encolher */
+  flex-shrink: 0; 
 }
 
 .service-extra-content {
@@ -243,8 +241,8 @@
   color: var(--white);
   border: none;
   font-weight: 700;
-  padding: 0.9rem 1.8rem;
-  font-size: 0.95rem;
+  padding: 0.9rem 1.5rem;
+  font-size: 0.96rem;
   border-radius: 8px;
   cursor: pointer;
   white-space: nowrap;
@@ -289,8 +287,8 @@
   color: var(--white);
   border: none;
   font-weight: 700;
-  padding: 0.9rem 1.8rem;
-  font-size: 0.95rem;
+  padding: 0.9rem 1.6rem;
+  font-size: 0.96rem;
   border-radius: 8px;
   cursor: pointer;
   white-space: nowrap;
