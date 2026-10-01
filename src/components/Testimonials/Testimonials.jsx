@@ -5,7 +5,7 @@ import './Testimonials.css';
 import logo_casa_do_sertanejo from '../../assets/logos_clientes/logo-casa-do-sertanejo.png'
 import logo_conf_franoelda from '../../assets/logos_clientes/logo-conf-franoelda.jpg'
 import logo_armazem from '../../assets/logos_clientes/logo-armazem.jpeg'
-import logo_supermecado_lucena from '../../assets/logos_clientes/Logo-supermecado-lucena.png'
+import logo_supermecado_lucena from '../../assets/logos_clientes/logo-supermecado-lucena.png'
 import icon_usuario from '../../assets/icons/icon-usuario.png'
 
 export function Testimonials() {
