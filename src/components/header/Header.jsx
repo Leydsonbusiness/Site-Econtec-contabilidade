@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
-import logoEcontec from "../../assets/logo_econtec.png";
+import logoEcontec from "../../assets/logo_econtec.png"
 import insta_icon from "../../assets/icons/instagram_icon.png";
 
 
@@ -104,7 +104,7 @@ return (
               <img src={insta_icon} alt="Instagram" className='icon_instagram_img'/>
             </a> 
 
-            <a href="#formulario" className="btn-fale-conosco">
+            <a href="#contato" className="btn-fale-conosco" onClick={WhatsappClick}>
               Fale Conosco
             </a>
           </div>

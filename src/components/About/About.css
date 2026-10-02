@@ -146,18 +146,17 @@
   border-radius: 10px;
   border: 2px solid #E2E8F0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-  transition: transform 0.4s ease;
+  transition: transform 0.65s ease;
 }
 
 .pilar-item:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(15, 44, 89, 0.08);
-  border-color: rgba(15, 44, 89, 0.2);
-
+  border-color: rgba(12, 36, 73, 0.2);
 }
 
 .pilar-icone-wrapper {
-  width: 48px;
+  width: 49px;
   height: 44px;
   background-color: rgba(15, 44, 89, 0.06); 
   border-radius: 10px;
@@ -168,11 +167,17 @@
   padding: 0.6rem;
 }
 
+
+
 .pilar-icone-img {
-  width: 24px;
+  width: 26px;
   height: 24px;
   object-fit: contain;
   display: block;
+}
+
+.pilar-item:hover .pilar-icone-img{
+  filter: brightness(0) saturate(100%) invert(20%) sepia(90%) saturate(500%) hue-rotate(180deg);
 }
 
 .pilar-titulo {
