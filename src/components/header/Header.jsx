@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
-import logoEcontec from "../../assets/logo_econtec.png"
+import logoEcontec from "../../assets/Logo_econtec.png"
 import insta_icon from "../../assets/icons/instagram_icon.png";
 
 
