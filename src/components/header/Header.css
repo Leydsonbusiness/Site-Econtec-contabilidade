@@ -149,7 +149,8 @@
   }
 
   .logo img {
-  height: 72px;          
+    padding-top: 6px;
+  height: 77px;          
   }
 
   .menu_hamburguer {
