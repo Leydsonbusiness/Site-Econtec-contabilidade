@@ -6,10 +6,8 @@ import './Hero.css';
 const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
 
 // Fotos carrossel 
-// import FOTO_ECONTEC1 from "../../assets/Logo_econtec.png"
-import FOTO_ECONTEC2 from "../../assets/Logo_econtec_3D.jpg"
+import FOTO_ECONTEC2 from "../../assets/logo_econtec_3D.jpg"
 import seta from "../../assets/icons/icon_seta-para-baixo.png"
-// import img_teste from "../../assets/img_teste.png"
 
 // Métricas animadas
 function MetricCounter({ end = 0, duration = 1480, prefix = '', suffix = '', inView }) {
@@ -53,21 +51,21 @@ export function Hero() {
   const [indiceAtual, setIndiceAtual] = useState(0);
 
   // Avançar a foto após 3s
-  useEffect(() => {
-    const timer = setInterval(() => {
-      proximaFoto();
-    }, 3000);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     proximaFoto();
+  //   }, 3000);
 
-    return () => clearInterval(timer);
-  }, [indiceAtual]);
+  //   return () => clearInterval(timer);
+  // }, [indiceAtual]);
 
-  const fotoAnterior = () => {
-    setIndiceAtual((prev) => (prev === 0 ? FOTOS_ECONTEC.length - 1 : prev - 1));
-  };
+  // const fotoAnterior = () => {
+  //   setIndiceAtual((prev) => (prev === 0 ? FOTOS_ECONTEC.length - 1 : prev - 1));
+  // };
 
-  const proximaFoto = () => {
-    setIndiceAtual((prev) => (prev === FOTOS_ECONTEC.length - 1 ? 0 : prev + 1));
-  };
+  // const proximaFoto = () => {
+  //   setIndiceAtual((prev) => (prev === FOTOS_ECONTEC.length - 1 ? 0 : prev + 1));
+  // };
   const FOTOS_ECONTEC = [
   {
     id: 1,
@@ -77,10 +75,19 @@ export function Hero() {
 
   const rolarparaservicos = (e) => {
     e.preventDefault();
-    window.scrollTo({
-      top: 1660, 
-      behavior: 'smooth' 
-    })
+
+    const elemento = document.getElementById('servicos');
+
+    if (elemento) {
+      const headerElement = document.querySelector('.header');
+
+      const posicaoFinal = elemento.getBoundingClientRect().top + window.pageYOffset;
+
+      window.scrollTo({
+        top: posicaoFinal,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const mensagem_wpp = (e) => {
@@ -157,7 +164,7 @@ const { ref: refMetrics, inView } = useInView({
         </div>
       </div>
       
-{/* BARRA DE MÉTRICAS */}
+{/* metricas */}
       <div className="container_metricas" ref={refMetrics}>
         <div className="metricas_hero">
           {metrics.map((metric, index) => (

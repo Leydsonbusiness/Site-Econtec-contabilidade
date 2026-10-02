@@ -1,0 +1,175 @@
+.footer-site {
+  width: 100%;
+  background-color: var(--primary-dark, #0a1f3d); /* Cor de fundo escuro elegante */
+  color: #f8fafc;
+  padding: 1.8rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-divisor {
+  width: 1px;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+.footer-coluna {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- COLUNA ESQUERDA --- */
+.footer-esquerda {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-brand-title {
+  font-size: 1.28rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.4rem 0;
+}
+
+.footer-brand-slogan {
+  font-size: 0.84rem;
+  color: #94a3b8;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* --- COLUNA CENTRO --- */
+.footer-centro {
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo-wrapper {
+  margin-bottom: 0.15rem;
+}
+
+.footer-logo-img {
+  max-height: 108px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* --- coluna direira --- */
+.footer-direita {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.footer-info-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.35rem 0;
+}
+
+.footer-endereco {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin: 0 0 0.5rem 0;
+}
+
+.footer-horarios {
+  font-size: 0.825rem;
+  color: #94a3b8;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.footer-horarios p {
+  margin: 2px 0;
+}
+
+.footer-link-whatsapp {
+  color: #10b981;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-link-whatsapp:hover {
+  color: #34d399;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0 auto;
+  text-align: center;
+}
+
+.footer-bottom-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.12);
+  margin-bottom: 1.5rem;
+}
+
+.footer-developer {
+  font-size: 0.835rem;
+  color: #697991;
+  margin: 0;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  transition: 0.7s;
+}
+
+.footer-developer:hover{
+  filter: brightness(1.7);
+}
+
+.footer-developer strong {
+  color: #a9b6c9;
+  font-weight: 650;
+}
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 850px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.75rem;
+  }
+
+  .footer-divisor {
+    display: none;
+  }
+
+  .footer-esquerda{
+    display: none;
+  }
+  
+  .footer-centro,
+  .footer-direita {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-direita {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+  }
+}

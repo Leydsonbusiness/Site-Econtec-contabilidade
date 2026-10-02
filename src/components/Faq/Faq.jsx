@@ -2,25 +2,26 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Faq.css';
 
+const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
+
 export function Faq() {
-  // Estado para controlar qual pergunta está aberta (guarda o id da pergunta aberta)
   const [openId, setOpenId] = useState(null);
 
   const faqs = [
     {
       id: 1,
-      pergunta: 'A Econtec atende clientes de outras cidades e estados?',
-      resposta: 'Sim! Atendemos empresas e clientes em todo o Brasil. Através dos nossos processos digitais e ferramentas integradas, garantimos um atendimento ágil, eficiente e sem barreiras geográficas.'
+      pergunta: 'O Econtec atende empresas e clientes de outras cidades?',
+      resposta: 'Sim. Além do atendimento presencial, contamos com ferramentas digitais que permitem atender clientes à distância, compartilhar documentos e acompanhar demandas de forma prática, mantendo a proximidade e o suporte da nossa equipe.'
     },
     {
       id: 2,
-      pergunta: 'O atendimento pode ser feito totalmente online?',
-      resposta: 'Com certeza. Oferecemos um atendimento 100% digital via WhatsApp, e-mail, videochamadas e plataformas de envio de documentos. Se você preferir um atendimento presencial, nossa equipe também está pronta para recebê-lo.'
+      pergunta: 'Já tenho contador. Como faço para mudar para a Econtec?',
+      resposta: 'A mudança é simples e você conta com o suporte da nossa equipe durante todo o processo. O Econtec intermedia a transição com o contador anterior, solicitando os documentos e informações necessários para dar continuidade aos serviços contábeis da sua empresa de forma organizada.'
     },
     {
       id: 3,
       pergunta: 'Quais tipos de empresas a Econtec atende?',
-      resposta: 'Atendemos empresas de diversos portes e segmentos, desde Microempreendedores Individuais (MEI), Microempresas (ME) até Empresas de Pequeno e Médio Porte nos regimes Simples Nacional, Lucro Presumido e Lucro Real.'
+      resposta: 'Sim! Nós atendemos negócios de diferentes portes e segmentos, desde MEIs e microempresas até empresas de pequeno e médio porte, com suporte para empresas enquadradas no Simples Nacional, Lucro Presumido e Lucro Real.'
     },
     {
       id: 4,
@@ -29,13 +30,13 @@ export function Faq() {
     },
     {
       id: 5,
-      pergunta: 'Como funciona a troca de contador?',
-      resposta: 'A troca é simples e sem complicações. A Econtec cuida de toda a transição burocrática diretamente com a sua contabilidade anterior, solicitando o envio de documentos e histórico fiscal sem interromper a sua rotina.'
+      pergunta: 'Minha empresa pode estar pagando mais impostos do que deveria?',
+      resposta: 'Sim, isso pode acontecer quando o enquadramento ou o planejamento tributário não estão adequados à realidade da empresa. A Econtec analisa a situação do negócio e identifica possibilidades legais de otimização tributária, sempre respeitando a legislação vigente.'
     },
     {
       id: 6,
-      pergunta: 'Como funciona o primeiro atendimento e quais documentos preciso enviar?',
-      resposta: 'No primeiro contato, realizamos um diagnóstico do seu negócio para entender suas reais necessidades. Após a definição dos serviços, enviamos uma lista simples com os documentos básicos (documentos dos sócios, contrato social ou dados da empresa).'
+      pergunta: 'Como funciona o primeiro atendimento na Econtec?',
+      resposta: 'No primeiro contato, buscamos entender o seu negócio e identificar suas principais necessidades. A partir disso, orientamos sobre os serviços mais adequados e informamos quais documentos serão necessários para dar início ao atendimento.'
     }
   ];
 
@@ -43,22 +44,30 @@ export function Faq() {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
+  const duvidas_wpp = (e) => {
+    e.preventDefault();
+    if (WHATSAPP_ECONTEC) {
+      window.open(
+        `https://wa.me/${WHATSAPP_ECONTEC}?text=${encodeURIComponent("Olá! Vim pelo site, li as dúvidas, mas ainda fiquei com mais algumas. Poderia me ajudar?")}`,
+        '_blank'
+      );
+    }
+  };
+
   return (
     <section className="faq-section" id= "faq">
       <div className="faq-container">
         
-        {/* CABEÇALHO */}
         <div className="faq-header">
           <span className="faq-tag">Tire suas dúvidas</span>
           <h2 className="faq-titulo">
             Perguntas <span className="destacar-faq">frequentes</span>
           </h2>
           <p className="faq-subtitulo">
-            Encontre respostas rápidas para as principais dúvidas sobre nossos serviços e atendimento.
+            Encontre respostas para as principais dúvidas sobre nossos serviços, atendimento e como é ter o Econtec ao lado do seu negócio.
           </p>
         </div>
 
-        {/* LISTA DE ACCORDIONS */}
         <div className="faq-list">
           {faqs.map((faq) => {
             const isOpen = openId === faq.id;
@@ -97,15 +106,12 @@ export function Faq() {
             );
           })}
         </div>
-
-        {/* CHAMADA ADICIONAL PARA SUPORTE */}
         <div className="faq-footer">
           <p>Ainda tem alguma dúvida?</p>
-          <a href="#contato" className="btn-faq-whatsapp">
+          <a href="#contato" className="btn-faq-whatsapp" onClick={duvidas_wpp}>
             Fale com a nossa equipe
           </a>
         </div>
-
       </div>
     </section>
   );

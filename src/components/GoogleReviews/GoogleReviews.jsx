@@ -22,7 +22,7 @@ export function GoogleReviews() {
             Avaliações do Econtec no <span className='destacar-reviews'>Google</span>
           </h2>
           <p className="reviews-subtitulo">
-            Confira a opinião em tempo real dos nossos clientes no perfil oficial do Google Meu Negócio.
+            Confira a opinião em tempo real dos nossos clientes no perfil oficial do Google Reviews.
           </p>
         </div>
 
