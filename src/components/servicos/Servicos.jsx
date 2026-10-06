@@ -75,16 +75,20 @@ export function Services() {
         `https://wa.me/${WHATSAPP_ECONTEC}?text=${encodeURIComponent(mensagem)}`,
         '_blank'
       );
+    } else{
+      console.warn("Número de Whatsapp não configurado na variável de ambiente")
     }
   }
-  
-  const solicitarConsultoria = (tituloServico) => {
-    if (WHATSAPP_ECONTEC) {
-      const mensagem = `Olá! Gostaria de mais informações sobre o serviço de *${tituloServico}*.`;
+
+  const solicitarConsultoria = (e) => {
+    e.preventDefault();
+    if (WHATSAPP_CONSULTORIA) {
       window.open(
-        `https://wa.me/${WHATSAPP_CONSULTORIA}?text=${encodeURIComponent(mensagem)}`,
+        `https://wa.me/${WHATSAPP_CONSULTORIA}?text=${encodeURIComponent("Olá! Gostaria de mais informações sobre o serviço de *Consultoria Empresarial*.")}`, 
         '_blank'
       );
+    } else {
+      console.warn("Número de WhatsApp não configurado na variável de ambiente");
     }
   };
 
@@ -143,7 +147,7 @@ export function Services() {
             className="service-extra-logo" 
           />
         
-          {/* Conteúdo central (Tags, Título e Descrição) */}
+          {/* Conteúdo central */}
           <div className='service-extra-content'>
             <h3>Precisa de uma Consultoria Empresarial?</h3>
             <p>A Econtec conta com a parceria da consultora empresarial Seilha Góes, oferecendo soluções estratégicas para gestão e desenvolvimento de negócios.</p>
@@ -155,17 +159,13 @@ export function Services() {
               <span className='tag'>Planejamento Tributário</span>                       
             </div>
           </div>
-
-          <button 
-            onClick={() => solicitarConsultoria('Consultoria empresarial')}
-            className="btn-consultoria"
-          >
+          <button className='btn-consultoria' onClick= {solicitarConsultoria}>
             Conhecer a consultoria
           </button>
         </div>
 
 
-        {/* BANNER CTA DE RODAPÉ DA SEÇÃO */}
+        {/* Atendimento personalizado */}
         <div className="services-cta-banner">
           <div>
             <h3>Não encontrou exatamente o que precisa?</h3>

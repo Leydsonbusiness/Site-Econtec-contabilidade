@@ -16,7 +16,7 @@ export function Footer() {
         '_blank'
       );
     } else {
-      console.warn("Número de WhatsApp não configurado na variável de ambiente VITE_Whatsapp_numero");
+      console.warn("Número de WhatsApp não configurado na variável de ambiente");
     };
   };
 
@@ -28,7 +28,7 @@ export function Footer() {
         '_blank'
       );
     } else {
-      console.warn("Número de WhatsApp não configurado na variável de ambiente VITE_Whatsapp_numero");
+      console.warn("Número de WhatsApp não configurado na variável de ambiente");
     }
   };
 
