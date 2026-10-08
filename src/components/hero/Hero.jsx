@@ -7,6 +7,8 @@ const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
 
 // Fotos carrossel 
 import FOTO_ECONTEC2 from "../../assets/Logo_econtec_3D.jpg";
+// import fotofachada1 from "../../assets/IMG_0042.jpg"
+// import fotofachada2 from "../../assets/IMG_0045.jpg"
 import seta from "../../assets/icons/icon_seta-para-baixo.png";
 
 // Métricas animadas
@@ -69,7 +71,7 @@ export function Hero() {
   const FOTOS_ECONTEC = [
   {
     id: 1,
-    url: FOTO_ECONTEC2,
+    url:  FOTO_ECONTEC2,
   },
 ];
 

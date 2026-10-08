@@ -87,6 +87,7 @@
   display: grid;
   gap: 1.75rem;
   width: 100%;
+  align-items: start; /* IMPEDE que um card estique o outro na mesma linha */
 }
 
 .testimonials-grid.double-column {
@@ -97,7 +98,6 @@
   grid-template-columns: 1fr;
 }
 
-/* depoimentos */
 .testimonial-card {
   background-color: var(--white, #ffffff);
   border: 2px solid #E2E8F0;
@@ -107,7 +107,7 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 18px 30px rgba(15, 44, 89, 0.04);
-  min-height: 280px;
+  min-height: auto; 
   box-sizing: border-box;
 }
 
@@ -128,8 +128,8 @@
 
 .testimonial-quote.limitado {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

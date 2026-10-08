@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './About.css';
-import img_teste from '../../assets/img_teste.png'
+
+// Icons
 import icon_grafico from '../../assets/icons/icon_grafico.png'
 import icon_trabalho from '../../assets/icons/icon_trabalho.png'
 import icon_seguranca from '../../assets/icons/escudo-seguro.png'
 
+// Fotos 
+import econtec1 from '../../assets/imagens_econtec/equipe_econtec.png'
+import econtec2 from '../../assets/imagens_econtec/fachada_econtec.png'
+import econtec3 from '../../assets/imagens_econtec/socias_econtec.png'
 
 export function About() { 
   const pilares = [
@@ -37,7 +42,7 @@ export function About() {
             {/* Foto 1 */}
             <div className="card_fotos foto1">
               <img 
-                src= {img_teste} 
+                src= {econtec1} 
                 alt="Sede Econtec" 
                 className="about-img"
               />
@@ -46,7 +51,7 @@ export function About() {
             {/* Foto 2 */}
             <div className="card_fotos foto2">
               <img 
-                src= {img_teste} 
+                src= {econtec2} 
                 alt="Equipe Econtec reunida" 
                 className="about-img"
               />
@@ -55,7 +60,7 @@ export function About() {
             {/* Foto 3 */}
             <div className="card_fotos foto3">
               <img 
-                src= {img_teste} 
+                src= {econtec3} 
                 alt="Atendimento consultivo" 
                 className="about-img"
               />

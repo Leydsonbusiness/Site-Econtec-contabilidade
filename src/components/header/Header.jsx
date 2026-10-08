@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 import logoEcontec from "../../assets/Logo_econtec.png"
+
 import insta_icon from "../../assets/icons/instagram_icon.png";
 
 
 const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
-const INSTAGRAM_URL = "https://www.instagram.com/leydsond_/" //instagram econtec
+const INSTAGRAM_URL = "https://www.instagram.com/econtecrn/" //instagram econtec
 
 export function Header() {
   // Reponsividade

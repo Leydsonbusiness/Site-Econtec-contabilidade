@@ -20,6 +20,7 @@
 /* 3 fotos */
 .about-photos-wrapper {
   width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,11 +38,12 @@
   position: absolute;
   width: 230px;
   height: 230px;
-  border-radius: 16px;
+  border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(15, 44, 89, 0.15);
-  border: 1px solid var(--text-muted); 
+  border: 2px solid var(--text-muted); 
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .about-img {
@@ -56,12 +58,13 @@
   top: -40px;
   left: 20px;
   z-index: 3;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* FOTO 2: */
 .foto2 {
-  top: 110px;
-  right: 10px;
+  top: 140px;
+  right: -10px;
   z-index: 2;
   transform: rotate(9deg);
 }
@@ -69,9 +72,9 @@
 /* FOTO 3 */
 .foto3 {
   bottom: 0;
-  left: 30px;
+  left: 20px;
   z-index: 1;
-  transform: rotate(-8deg);
+  transform: rotate(-9deg);
 }
 
 .about-photos-composition:hover .foto1 {
@@ -219,15 +222,15 @@
   .card_fotos {
     width: 170px;
     height: 170px;
-    border-radius: 20px;
-    border-width: 3px;
+    border-radius: 12px;
+    border-width: 2px;
   }
 
   .foto2 {
-    top: 90px;
+    top: 95px;
   }
 
   .foto3 {
-    left: 30px;
+    left: 20px;
   }
 }

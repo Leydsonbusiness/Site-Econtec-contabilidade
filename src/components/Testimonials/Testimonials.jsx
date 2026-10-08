@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Testimonials.css';
 
-import logo_casa_do_sertanejo from '../../assets/logos_clientes/logo-casa-do-sertanejo.png'
-import logo_conf_franoelda from '../../assets/logos_clientes/logo-conf-franoelda.jpg'
-import logo_armazem from '../../assets/logos_clientes/logo-armazem.jpeg'
-import logo_supermecado_lucena from '../../assets/logos_clientes/logo-supermecado-lucena.png'
-import icon_usuario from '../../assets/icons/icon-usuario.png'
+import logo_casa_do_sertanejo from '../../assets/logos_clientes/logo-casa-do-sertanejo.png';
+import logo_conf_franoelda from '../../assets/logos_clientes/logo-conf-franoelda.jpg';
+import logo_armazem from '../../assets/logos_clientes/logo-armazem.jpeg';
+import logo_supermecado_lucena from '../../assets/logos_clientes/logo-supermecado-lucena.png';
+import icon_usuario from '../../assets/icons/icon-usuario.png';
 
 export function Testimonials() {
   const depoimentos = [
@@ -43,6 +43,8 @@ export function Testimonials() {
     {
       id: 4,
       nome: 'Welkson Renny',
+      cargo: 'Cliente',
+      empresa: '',
       segmento: 'Pessoa Física',
       depoimento: 'Conheço o trabalho da ECONTEC há pelo menos 2 décadas quando ainda trabalhava com automação comercial e o escritório prestava serviço aos nossos clientes. São comprometidos com os prazos, e fazem um trabalho com excelência. Recomendo a todo empreendedor que entende o quão crítico é uma gestão fiscal/contábil feita com corretude e agilidade.',
       estrelas: 5,
@@ -52,7 +54,7 @@ export function Testimonials() {
       id: 5,
       nome: 'Marcos Vinicius',
       cargo: 'Proprietário',
-      empresa: 'Supermecado Lucena',
+      empresa: 'Supermercado Lucena',
       segmento: 'Comércio varejista',
       depoimento: 'Excelente serviço de contabilidade! Equipe muito atenciosa, profissional e comprometida. O atendimento é de alta qualidade e fazem tudo com muito cuidado e eficiência. Recomendo!',
       estrelas: 5,
@@ -61,6 +63,8 @@ export function Testimonials() {
     {
       id: 6,
       nome: 'Lucas Costa',
+      cargo: 'Cliente',
+      empresa: '',
       segmento: 'Pessoa Física',
       depoimento: 'Trabalho excepcional! Mesmo morando em Brasília, tenho total tranquilidade porque eles resolvem tudo para mim com muita agilidade e profissionalismo. Recomendo muito!',
       estrelas: 5,
@@ -74,7 +78,6 @@ export function Testimonials() {
   const [expandedId, setExpandedId] = useState(null);
   const [isInteracting, setIsInteracting] = useState(false);
 
-  // Detecta o tamanho da tela para definir 1 ou 2 itens na página
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 900) {
@@ -85,7 +88,6 @@ export function Testimonials() {
     };
 
     handleResize();
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -124,7 +126,6 @@ export function Testimonials() {
     setExpandedId((prev) => (prev === id ? null : id));
   };
 
-  // carrossel animado
   const handleDragEnd = (event, info) => {
     setIsInteracting(false);
     const offsetThreshold = 40; 
@@ -180,8 +181,11 @@ export function Testimonials() {
           </p>
         </div>
 
-        {/* carrossel */}
-        <div className="testimonials-carousel-wrapper">
+        <div 
+          className="testimonials-carousel-wrapper"
+          onMouseEnter={() => setIsInteracting(true)}
+          onMouseLeave={() => setIsInteracting(false)}
+        >
           <button 
             onClick={paginaAnterior} 
             className="carousel-control prev"
@@ -239,18 +243,24 @@ export function Testimonials() {
                           {item.logoUrl ? (
                             <img 
                               src={item.logoUrl} 
-                              alt={`Logo ${item.empresa}`} 
+                              alt={`Logo ${item.empresa || item.nome}`} 
                               className="company-logo" 
                               draggable="false"
                             />
                           ) : (
-                            item.empresa.charAt(0)
+                            item.nome.charAt(0)
                           )}
                         </div>
                         <div className="author-info">
                           <h4 className="author-name">{item.nome}</h4>
                           <p className="author-company">
-                            {item.cargo} - <strong>{item.empresa}</strong>
+                            {item.empresa ? (
+                              <>
+                                {item.cargo} na <strong>{item.empresa}</strong>
+                              </>
+                            ) : (
+                              <span>{item.cargo}</span>
+                            )}
                           </p>
                           <span className="author-segment">{item.segmento}</span>
                         </div>
