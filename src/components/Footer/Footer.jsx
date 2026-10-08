@@ -42,7 +42,7 @@ export function Footer() {
     <footer className="footer-site" id="contato">
       <div className="footer-container">
         
-        {/* Coluna Esquerda (Fica visível só no Desktop) */}
+        {/* Coluna Esquerda */}
         <div className="footer-coluna footer-esquerda">
           <h3 className="footer-brand-title">Econtec Contabilidade</h3>
           <p className="footer-brand-slogan">
