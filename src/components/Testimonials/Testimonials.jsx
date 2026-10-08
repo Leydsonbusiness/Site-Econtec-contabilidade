@@ -56,7 +56,7 @@ export function Testimonials() {
       cargo: 'Proprietário',
       empresa: 'Supermercado Lucena',
       segmento: 'Comércio varejista',
-      depoimento: 'Excelente serviço de contabilidade! Equipe muito atenciosa, profissional e comprometida. O atendimento é de alta qualidade e fazem tudo com muito cuidado e eficiência. Recomendo!',
+      depoimento: 'Excelente serviço de contabilidade! Equipe muito atenciosa, profissional e comprometida. O atendimento é de alta qualidade e fazem tudo com muito cuidado e eficiência.',
       estrelas: 5,
       logoUrl: logo_supermecado_lucena
     },
@@ -212,7 +212,7 @@ export function Testimonials() {
               >
                 {depoimentosExibidos.map((item) => {
                   const isExpanded = expandedId === item.id;
-                  const precisaLerMais = item.depoimento.length > 180;
+                  const precisaLerMais = item.depoimento.length > 1770;
 
                   return (
                     <div key={item.id} className="testimonial-card">

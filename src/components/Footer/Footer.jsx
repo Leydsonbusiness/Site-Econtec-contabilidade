@@ -1,7 +1,11 @@
 import React from 'react';
 import './Footer.css';
-import logo_econtec from '../../assets/logo-econtecf.png'
 
+// Imagens e icon
+import logo_econtec from '../../assets/logo-econtecf.png'
+import icon_instagram from '../../assets/icons/instagram_icon.png'
+
+// Números
 const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
 const WHATSAPP_DESENVOLVEDOR = import.meta.env.VITE_Whatsapp_developer;
 
@@ -17,7 +21,7 @@ export function Footer() {
       );
     } else {
       console.warn("Número de WhatsApp não configurado na variável de ambiente");
-    };
+    }
   };
 
   const Whatsappdesenvolvedor = (e) => {
@@ -32,19 +36,27 @@ export function Footer() {
     }
   };
 
+  const INSTAGRAM_URL = "https://www.instagram.com/econtecrn/" //instagram econtec
+
   return (
     <footer className="footer-site" id="contato">
       <div className="footer-container">
         
+        {/* Coluna Esquerda (Fica visível só no Desktop) */}
         <div className="footer-coluna footer-esquerda">
           <h3 className="footer-brand-title">Econtec Contabilidade</h3>
           <p className="footer-brand-slogan">
             Contabilizando o seu sucesso com transparência e agilidade.
           </p>
+          <div className='redes-sociais'>
+              <img src={icon_instagram} alt="Instagram da empresa"/>
+              <a href= {INSTAGRAM_URL} target='_blank'>@econteccontabilidade</a>
+          </div>
         </div>
 
         <div className="footer-divisor"></div>
 
+        {/* Coluna Centro */}
         <div className="footer-coluna footer-centro">
           <div className="footer-logo-wrapper">
             <img src={logo_econtec} alt="Econtec Contabilidade" className="footer-logo-img"/>
@@ -52,10 +64,17 @@ export function Footer() {
           <p className="footer-copyright">
             © {anoAtual} Econtec Contabilidade. Todos os direitos reservados.
           </p>
+
+          {/* Instagram duplicado que aparecerá apenas no MOBILE abaixo do copyright */}
+          <div className='redes-sociais redes-sociais-mobile'>
+              <img src={icon_instagram} alt="Instagram da empresa"/>
+              <a href={INSTAGRAM_URL} target='_blank'>@econteccontabilidade</a>
+          </div>
         </div>
 
         <div className="footer-divisor"></div>
 
+        {/* Coluna Direita */}
         <div className="footer-coluna footer-direita">
           <h4 className="footer-info-title">Visite nosso Escritório:</h4>
           <p className="footer-endereco">

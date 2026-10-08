@@ -49,6 +49,36 @@
   margin: 0;
 }
 
+.redes-sociais {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 13px;
+  color: #ffffff;
+  opacity: 0.80;
+  transition: opacity 0.3s ease;
+}
+
+.redes-sociais img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;  
+  filter: brightness(0) invert(1);
+}
+
+.redes-sociais:hover {
+  opacity: 100%;
+  color: aqua;
+}
+
+.redes-sociais a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
 /* --- COLUNA CENTRO --- */
 .footer-centro {
   align-items: center;
@@ -71,7 +101,7 @@
   margin: 0;
 }
 
-/* --- coluna direira --- */
+/* --- COLUNA DIREITA --- */
 .footer-direita {
   align-items: flex-end;
   text-align: right;
@@ -136,7 +166,7 @@
   transition: 0.7s;
 }
 
-.footer-developer:hover{
+.footer-developer:hover {
   filter: brightness(1.7);
 }
 
@@ -146,7 +176,12 @@
 }
 
 /* --- RESPONSIVIDADE (MOBILE) --- */
-@media (max-width: 850px) {
+/* O instagram mobile começa oculto no computador */
+.redes-sociais-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
@@ -157,7 +192,7 @@
     display: none;
   }
 
-  .footer-esquerda{
+  .footer-esquerda {
     display: none;
   }
   
@@ -166,6 +201,11 @@
     align-items: center;
     text-align: center;
     width: 100%;
+  }
+
+  .redes-sociais-mobile {
+    display: flex;
+    margin-top: 13px;
   }
 
   .footer-direita {
