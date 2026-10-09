@@ -100,7 +100,7 @@ export function Services() {
         <div className="services-header">
           <span className="services-tag">Nossos Serviços</span>
           <h2 className="services-titulo">
-            Soluções contábeis <span className="destacar-servicos">completas</span> para cada fase do seu negócio.
+            Da gestão ao crescimento, soluções <span className="destacar-servicos">completas</span> para cada etapa do seu negócio.
           </h2>
           <p className="services-subtitulo">
             Da abertura à gestão consultiva do dia a dia, entregamos segurança fiscal e clareza para a tomada de decisões.

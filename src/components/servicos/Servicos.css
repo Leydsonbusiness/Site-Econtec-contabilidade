@@ -35,7 +35,7 @@
   line-height: 1.25;
   color: var(--primary);
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
 }
 
 .destacar-servicos {
@@ -48,7 +48,7 @@
 }
 
 .services-subtitulo {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: #475569;
   line-height: 1.6;
 }
@@ -325,7 +325,7 @@
   }
 
   .services-titulo {
-    font-size: 1.46rem;
+    font-size: 1.59rem;
     font-weight: 800;
   }
 

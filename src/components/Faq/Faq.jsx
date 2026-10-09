@@ -10,18 +10,18 @@ export function Faq() {
   const faqs = [
     {
       id: 1,
-      pergunta: 'O Econtec atende empresas e clientes de outras cidades?',
+      pergunta: 'A Econtec atende empresas e clientes de outras cidades?',
       resposta: 'Sim. Além do atendimento presencial, contamos com ferramentas digitais que permitem atender clientes à distância, compartilhar documentos e acompanhar demandas de forma prática, mantendo a proximidade e o suporte da nossa equipe.'
     },
     {
       id: 2,
       pergunta: 'Já tenho contador. Como faço para mudar para a Econtec?',
-      resposta: 'A mudança é simples e você conta com o suporte da nossa equipe durante todo o processo. O Econtec intermedia a transição com o contador anterior, solicitando os documentos e informações necessários para dar continuidade aos serviços contábeis da sua empresa de forma organizada.'
+      resposta: 'A mudança é simples e você conta com o suporte da nossa equipe durante todo o processo. A Econtec intermedia a transição com o contador anterior, solicitando os documentos e informações necessários para dar continuidade aos serviços contábeis da sua empresa de forma organizada.'
     },
     {
       id: 3,
       pergunta: 'Quais tipos de empresas a Econtec atende?',
-      resposta: 'Sim! Nós atendemos negócios de diferentes portes e segmentos, desde MEIs e microempresas até empresas de pequeno e médio porte, com suporte para empresas enquadradas no Simples Nacional, Lucro Presumido e Lucro Real.'
+      resposta: 'Nós atendemos negócios de diferentes portes e segmentos, desde MEIs e microempresas até empresas de pequeno e médio porte, com suporte para empresas enquadradas no Simples Nacional, Lucro Presumido e Lucro Real.'
     },
     {
       id: 4,
