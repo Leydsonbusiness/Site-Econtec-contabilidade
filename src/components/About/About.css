@@ -38,7 +38,7 @@
   position: absolute;
   width: 230px;
   height: 230px;
-  border-radius: 15px;
+  border-radius: 13px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(15, 44, 89, 0.15);
   border: 2px solid var(--text-muted); 
@@ -170,8 +170,6 @@
   padding: 0.6rem;
 }
 
-
-
 .pilar-icone-img {
   width: 26px;
   height: 24px;
@@ -198,7 +196,43 @@
   margin-left: 2px;
 }
 
-/* responsividade */
+/* Responsividade telas de monitores maiores  */
+@media (min-width: 1440px) {
+  .card_fotos{
+    width: 270px;
+    height: 270px;
+  }
+
+  .about-container {
+    width: 100%;
+    max-width: 1340px;
+  }
+
+  .foto1 {
+    top: -50px;
+    left: -30px;
+    z-index: 3;
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  /* FOTO 2: */
+  .foto2 {
+    top: 130px;
+    right: -30px;
+    z-index: 2;
+    transform: rotate(9deg);
+  }
+
+  /* FOTO 3 */
+  .foto3 {
+    bottom: -30px;
+    left: -40px;
+    z-index: 1;
+    transform: rotate(-9deg);
+  }
+}
+
+  /* responsividade celular */
 @media (max-width: 768px) {
   .about-container {
     display: flex;

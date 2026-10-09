@@ -266,8 +266,8 @@
 }
 
 /*Responsividade monitores maiores*/
-@media (min-width: 1600px) {
+@media (min-width: 1440px) {
   .hero_container,
   .metricas_hero {
-    max-width: 1360px;
+    max-width: 1380px;
   }}

@@ -158,7 +158,7 @@
 }
 
 .footer-developer {
-  font-size: 0.835rem;
+  font-size: .88rem;
   color: #697991;
   margin: 0;
   letter-spacing: 0.4px;
@@ -175,12 +175,21 @@
   font-weight: 650;
 }
 
-/* --- RESPONSIVIDADE (MOBILE) --- */
+/* --- RESPONSIVIDADE  --- */
 /* O instagram mobile começa oculto no computador */
 .redes-sociais-mobile {
   display: none;
 }
 
+/* Responsividade monitores maiores */
+@media (min-width: 1440px) {
+  .footer-container {
+  max-width: 1450px;
+  }
+}
+
+
+/* Responsividade celular */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;

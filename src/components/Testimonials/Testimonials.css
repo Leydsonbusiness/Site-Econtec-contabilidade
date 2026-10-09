@@ -273,7 +273,7 @@
   border-radius: 10px;
 }
 
-/* responsividade */
+/* responsividade mobile */
 @media (max-width: 768px) {
   .testimonials {
     padding: 3rem 1rem 2rem 1rem;

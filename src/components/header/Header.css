@@ -211,7 +211,7 @@
 }
 
 /*Para telas maiores*/
-@media (min-width: 1600px) {
+@media (min-width: 1440px) {
   .header-container {
     max-width: 1360px;
   }
