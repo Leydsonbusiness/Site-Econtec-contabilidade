@@ -73,7 +73,7 @@ export function About() {
           <span className="about-tag">Quem Somos</span>
           
           <h2 className="about-titulo">
-            Mais que um escritório contábil: o <span className="destacar-sobre">parceiro estratégico</span> do seu negócio.
+            Conheça a Econtec, sua<span className="destacar-sobre">parceira estratégica</span> para o sucesso do seu negócio.
           </h2>
 
           <p className="about-text">
@@ -81,7 +81,7 @@ export function About() {
           </p>
 
           <p className="about-text">
-            Nosso compromisso é simplificar a rotina contábil, fiscal e financeira dos nossos clientes, para que cada empreendedor possa dedicar mais tempo ao que realmente importa: fazer seu negócio crescer com segurança.
+            <strong>Nosso compromisso é simplificar a rotina contábil, fiscal e financeira dos nossos clientes</strong>, para que cada empreendedor possa dedicar mais tempo ao que realmente importa: fazer seu negócio crescer com segurança.
           </p>
 
           {/* pilares */}
