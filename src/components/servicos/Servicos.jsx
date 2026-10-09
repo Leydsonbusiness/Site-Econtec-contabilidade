@@ -14,8 +14,6 @@ import icon_imposto from '../../assets/icons/text-editor.png'
 import logo_seilhagoes from '../../assets/logo_seilhagoes.png'
 
 
-
-
 export function Services() {
   const listaServicos = [
     {

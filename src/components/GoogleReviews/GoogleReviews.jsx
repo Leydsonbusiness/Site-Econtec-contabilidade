@@ -25,15 +25,14 @@ export function GoogleReviews() {
             Confira a opinião em tempo real dos nossos clientes no perfil oficial do Google Reviews.
           </p>
         </div>
-
+        
         {/* CONTAINER DO WIDGET ELFSIGHT */}
         <div className="elfsight-widget-wrapper">
           <div 
-            className="elfsight-app-b8c0ba71-cea8-428f-bb70-565faeac65f5" 
+            className="elfsight-app-33210a1f-cbcc-4058-9602-cbc66b60025b" 
             data-elfsight-app-lazy 
           />
         </div>
-
       </div>
     </section>
   );

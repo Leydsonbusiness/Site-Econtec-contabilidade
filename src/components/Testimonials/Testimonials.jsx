@@ -212,7 +212,7 @@ export function Testimonials() {
               >
                 {depoimentosExibidos.map((item) => {
                   const isExpanded = expandedId === item.id;
-                  const precisaLerMais = item.depoimento.length > 177;
+                  const precisaLerMais = item.depoimento.length > 178;
 
                   return (
                     <div key={item.id} className="testimonial-card">
