@@ -29,8 +29,7 @@ export function GoogleReviews() {
         {/* CONTAINER DO WIDGET ELFSIGHT */}
         <div className="elfsight-widget-wrapper">
           <div 
-            className="elfsight-app-b8c0ba71-cea8-428f-bb70-565faeac65f5" 
-            data-elfsight-app-lazy 
+            className="elfsight-app-b8c0ba71-cea8-428f-bb70-565faeac65f5" data-elfsight-app-lazy
           />
         </div>
 
