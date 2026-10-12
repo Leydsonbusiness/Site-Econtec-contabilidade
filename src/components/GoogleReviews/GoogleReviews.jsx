@@ -3,7 +3,7 @@ import './GoogleReviews.css';
 
 export function GoogleReviews() {
   useEffect(() => {
-    // Verifica se o script do Elfsight já existe para não duplicar na página
+    // Verifica se o script do elfsight já existe para não duplicar na página
     const existingScript = document.querySelector('script[src="https://elfsightcdn.com/platform.js"]');
 
     if (!existingScript) {
@@ -26,13 +26,10 @@ export function GoogleReviews() {
           </p>
         </div>
 
-        {/* CONTAINER DO WIDGET ELFSIGHT */}
+        { /* Widget ELFSIGHT */ }
         <div className="elfsight-widget-wrapper">
-          <div 
-            className="elfsight-app-b8c0ba71-cea8-428f-bb70-565faeac65f5" data-elfsight-app-lazy
-          />
+          <div className="elfsight-app-b8c0ba71-cea8-428f-bb70-565faeac65f5" data-elfsight-app-lazy/>
         </div>
-
       </div>
     </section>
   );
