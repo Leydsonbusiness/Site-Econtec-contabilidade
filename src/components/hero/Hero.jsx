@@ -142,7 +142,7 @@ const { ref: refMetrics, inView } = useInView({
           <div className="card_carrossel">
             <img 
               src={FOTOS_ECONTEC[indiceAtual].url} 
-              alt="Fotos_Econtec"
+              alt="Econtec Contabilidade"
               className="carrossel_img"
             />
 

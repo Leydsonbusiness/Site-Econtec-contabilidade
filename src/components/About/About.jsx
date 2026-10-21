@@ -43,7 +43,7 @@ export function About() {
             <div className="card_fotos foto1">
               <img 
                 src= {econtec1} 
-                alt="Sede Econtec" 
+                alt="Equipe da Econtec Contabilidade" 
                 className="about-img"
               />
             </div>
@@ -52,7 +52,7 @@ export function About() {
             <div className="card_fotos foto2">
               <img 
                 src= {econtec2} 
-                alt="Equipe Econtec reunida" 
+                alt="Fachada da Econtec Contabilidade" 
                 className="about-img"
               />
             </div>

@@ -22,7 +22,7 @@ export function Services() {
       id: 'abertura',
       icone: icon_abertura,
       alt: 'Ícone Abertura de Empresa',
-      titulo: 'Abertura & Legalização',
+      titulo: 'Abertura & Legalização de Empresas',
       descricao: 'Acompanhamento completo na estruturação do seu negócio, escolha do tipo jurídico e definição do regime tributário ideal desde o primeiro dia.',
       tags: [ 'Contrato Social', 'CNPJ', 'Licenças', 'Inscrição Estadual/Municipal' ]
     },
