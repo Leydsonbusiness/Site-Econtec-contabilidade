@@ -5,9 +5,10 @@ import './Footer.css';
 import logo_econtec from '../../assets/logo-econtecf.png'
 import icon_instagram from '../../assets/icons/instagram_icon.png'
 
-// Números
+// Número
 const WHATSAPP_ECONTEC = import.meta.env.VITE_Whatsapp_numero;
-const WHATSAPP_DESENVOLVEDOR = import.meta.env.VITE_Whatsapp_developer;
+
+const INSTAGRAM_URL = "https://www.instagram.com/econtecrn/" //instagram econtec
 
 export function Footer() {
   const anoAtual = new Date().getFullYear();
@@ -23,20 +24,6 @@ export function Footer() {
       console.warn("Número de WhatsApp não configurado na variável de ambiente");
     }
   };
-
-  const Whatsappdesenvolvedor = (e) => {
-    e.preventDefault();
-    if (WHATSAPP_DESENVOLVEDOR) {
-      window.open(
-        `https://wa.me/${WHATSAPP_DESENVOLVEDOR}?text=${encodeURIComponent("Olá! Conheci seu trabalho através do site do Econtec e gostaria de solicitar um orçamento para o desenvolvimento de um site.")}`, 
-        '_blank'
-      );
-    } else {
-      console.warn("Número de WhatsApp não configurado na variável de ambiente");
-    }
-  };
-
-  const INSTAGRAM_URL = "https://www.instagram.com/econtecrn/" //instagram econtec
 
   return (
     <footer className="footer-site" id="contato">
@@ -95,7 +82,7 @@ export function Footer() {
 
       <div className="footer-bottom">
         <div className="footer-bottom-line"></div>
-        <a href="#contato" onClick={Whatsappdesenvolvedor} className="footer-developer">Desenvolvido por <strong>Leydson</strong></a>
+        <a href="https://deyontecnologia.com.br/" className="footer-developer" target='_blank'>Desenvolvido por <strong>Deyon Tecnologia</strong></a>
       </div>
     </footer>
   );
